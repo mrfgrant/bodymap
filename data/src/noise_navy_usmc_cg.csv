@@ -1,0 +1,185 @@
+branch,component,code,title,noise
+Navy,Enlisted,AB,Aviation Boatswain's Mate,H
+Navy,Enlisted,ABE,Aviation Boatswain's Mate (Launching and Recovery Equipment),H
+Navy,Enlisted,ABF,Aviation Boatswain's Mate (Fuels),H
+Navy,Enlisted,ABH,Aviation Boatswain's Mate (Aircraft Handling),H
+Navy,Enlisted,AC,Air Traffic Controller,M
+Navy,Enlisted,AD,Aviation Machinist's Mate,H
+Navy,Enlisted,AE,Aviation Electrician's Mate,H
+Navy,Enlisted,AG,Aerographer's Mate,L
+Navy,Enlisted,AM,Aviation Structural Mechanic,H
+Navy,Enlisted,AME,Aviation Structural Mechanic (Safety Equipment),H
+Navy,Enlisted,AO,Aviation Ordnanceman,H
+Navy,Enlisted,AS,Aviation Support Equipment Technician,H
+Navy,Enlisted,AT,Aviation Electronics Technician,M
+Navy,Enlisted,AW,Aviation Aircrewman,H
+Navy,Enlisted,AWF,Aviation Aircrewman (Mechanical),H
+Navy,Enlisted,AWO,Aviation Aircrewman (Operator),H
+Navy,Enlisted,AWR,Aviation Aircrewman (Tactical Helicopter),H
+Navy,Enlisted,AWS,Aviation Aircrewman (Helicopter),H
+Navy,Enlisted,AWV,Aviation Aircrewman (Avionics),H
+Navy,Enlisted,AZ,Aviation Maintenance Administrationman,L
+Navy,Enlisted,PR,Aircraft Survival Equipmentman,L
+Navy,Enlisted,BU,Builder (Seabee),H
+Navy,Enlisted,CE,Construction Electrician (Seabee),M
+Navy,Enlisted,CM,Construction Mechanic (Seabee),M
+Navy,Enlisted,EA,Engineering Aide (Seabee),L
+Navy,Enlisted,EO,Equipment Operator (Seabee),H
+Navy,Enlisted,SW,Steelworker (Seabee),H
+Navy,Enlisted,UT,Utilitiesman (Seabee),M
+Navy,Enlisted,BM,Boatswain's Mate,H
+Navy,Enlisted,CS,Culinary Specialist,L
+Navy,Enlisted,CTI,Cryptologic Technician (Interpretive),L
+Navy,Enlisted,CTM,Cryptologic Technician (Maintenance),L
+Navy,Enlisted,CTR,Cryptologic Technician (Collection),L
+Navy,Enlisted,CTT,Cryptologic Technician (Technical),L
+Navy,Enlisted,CTN,Cryptologic Technician (Networks),L
+Navy,Enlisted,ET,Electronics Technician,M
+Navy,Enlisted,FC,Fire Controlman,M
+Navy,Enlisted,FT,Fire Control Technician,M
+Navy,Enlisted,GM,Gunner's Mate,H
+Navy,Enlisted,HM,Hospital Corpsman,L
+Navy,Enlisted,IS,Intelligence Specialist,L
+Navy,Enlisted,IT,Information Systems Technician,M
+Navy,Enlisted,LN,Legalman,L
+Navy,Enlisted,LS,Logistics Specialist,L
+Navy,Enlisted,MA,Master-at-Arms,M
+Navy,Enlisted,MC,Mass Communication Specialist,L
+Navy,Enlisted,MN,Mineman,L
+Navy,Enlisted,MT,Missile Technician,L
+Navy,Enlisted,MU,Musician,M
+Navy,Enlisted,NC,Navy Counselor,L
+Navy,Enlisted,OS,Operations Specialist,L
+Navy,Enlisted,PS,Personnel Specialist,L
+Navy,Enlisted,QM,Quartermaster,L
+Navy,Enlisted,RP,Religious Programs Specialist,L
+Navy,Enlisted,SB,Special Warfare Boat Operator,H
+Navy,Enlisted,SH,Ship's Serviceman,L
+Navy,Enlisted,SO,Special Warfare Operator (SEAL),H
+Navy,Enlisted,STS,Sonar Technician (Submarine),L
+Navy,Enlisted,STG,Sonar Technician (Surface),L
+Navy,Enlisted,YN,Yeoman,L
+Navy,Enlisted,DC,Damage Controlman,H
+Navy,Enlisted,EM,Electrician's Mate,M
+Navy,Enlisted,EN,Engineman,H
+Navy,Enlisted,EOD,Explosive Ordnance Disposal,H
+Navy,Enlisted,GS,Gas Turbine System Technician,H
+Navy,Enlisted,GSE,Gas Turbine System Technician (Electrical),H
+Navy,Enlisted,GSM,Gas Turbine System Technician (Mechanical),H
+Navy,Enlisted,HT,Hull Maintenance Technician,H
+Navy,Enlisted,IC,Interior Communications Electrician,M
+Navy,Enlisted,MM,Machinist's Mate,H
+Navy,Enlisted,MR,Machinery Repairman,H
+Navy,Enlisted,ND,Navy Diver,M
+Navy,Enlisted,CMC,Command Master Chief,L
+Navy,Enlisted,SN,Seaman (undesignated),M
+Navy,Enlisted,FN,Fireman (undesignated),H
+Navy,Enlisted,AN,Airman (undesignated),H
+Navy,Officer,1110,Surface Warfare Officer,H
+Navy,Officer,1120,Submarine Officer,H
+Navy,Officer,1130,Special Warfare Officer (SEAL),H
+Navy,Officer,1140,Explosive Ordnance Disposal Officer,H
+Navy,Officer,1310,Naval Aviator (Pilot),H
+Navy,Officer,1320,Naval Flight Officer,H
+Navy,Officer,1510,Aerospace Engineering Duty Officer,H
+Navy,Officer,1520,Aerospace Maintenance Duty Officer,H
+Navy,Officer,1800,Oceanography Officer,L
+Navy,Officer,1810,Information Warfare Officer,L
+Navy,Officer,1820,Information Professional Officer,L
+Navy,Officer,1830,Intelligence Officer,L
+Navy,Officer,2100,Medical Corps Officer,L
+Navy,Officer,2200,Dental Corps Officer,M
+Navy,Officer,2300,Medical Service Corps Officer,L
+Navy,Officer,2500,Judge Advocate General Corps Officer,L
+Navy,Officer,2900,Nurse Corps Officer,L
+Navy,Officer,3100,Supply Corps Officer,L
+Navy,Officer,4100,Chaplain Corps Officer,L
+Navy,Officer,5100,Civil Engineer Corps Officer,M
+Navy,Officer,6490,Security and Police Officer (LDO),M
+Navy,Officer,7200,Engineering and Machinery Officer (LDO),H
+Marine Corps,Enlisted,01XX,Personnel and Administration,L
+Marine Corps,Officer,01XX,Personnel and Administration Officer,L
+Marine Corps,Enlisted,02XX,Intelligence,H
+Marine Corps,Officer,02XX,Intelligence Officer,L
+Marine Corps,Enlisted,03XX,Infantry,H
+Marine Corps,Officer,03XX,Infantry Officer,H
+Marine Corps,Enlisted,04XX,Logistics,M
+Marine Corps,Officer,04XX,Logistics Officer,L
+Marine Corps,Enlisted,05XX,MAGTF Plans,L
+Marine Corps,Officer,05XX,MAGTF Plans Officer,L
+Marine Corps,Enlisted,06XX,Communications,M
+Marine Corps,Officer,06XX,Communications Officer,M
+Marine Corps,Enlisted,08XX,Field Artillery,H
+Marine Corps,Officer,08XX,Field Artillery Officer,H
+Marine Corps,Enlisted,09XX,Training,H
+Marine Corps,Enlisted,11XX,Utilities,L
+Marine Corps,Enlisted,13XX,Engineer Construction Facilities and Equipment,H
+Marine Corps,Officer,13XX,Engineer Officer,H
+Marine Corps,Enlisted,18XX,Tank and Assault Amphibious Vehicle,H
+Marine Corps,Officer,18XX,Tank and AAV Officer,H
+Marine Corps,Enlisted,21XX,Ground Ordnance Maintenance,H
+Marine Corps,Officer,21XX,Ground Ordnance Maintenance Officer,M
+Marine Corps,Enlisted,2311,Ammunition Technician,H
+Marine Corps,Officer,2300,Ammunition and EOD Officer,M
+Marine Corps,Enlisted,26XX,Signals Intelligence/Ground Electronic Warfare,M
+Marine Corps,Enlisted,27XX,Linguist,L
+Marine Corps,Enlisted,28XX,Ground Electronics Maintenance,M
+Marine Corps,Officer,28XX,Ground Electronics Maintenance Officer,L
+Marine Corps,Enlisted,30XX,Supply Administration and Operations,L
+Marine Corps,Officer,30XX,Supply Officer,L
+Marine Corps,Enlisted,31XX,Distribution Management,L
+Marine Corps,Enlisted,33XX,Food Service,L
+Marine Corps,Officer,33XX,Food Service Officer,L
+Marine Corps,Enlisted,34XX,Financial Management,L
+Marine Corps,Enlisted,35XX,Motor Transport,M
+Marine Corps,Enlisted,41XX,Marine Corps Community Services,L
+Marine Corps,Enlisted,43XX,Public Affairs,H
+Marine Corps,Officer,43XX,Public Affairs Officer,L
+Marine Corps,Enlisted,44XX,Legal Services,L
+Marine Corps,Enlisted,46XX,Combat Camera,H
+Marine Corps,Enlisted,48XX,Recruiting and Retention,L
+Marine Corps,Enlisted,55XX,Music,M
+Marine Corps,Enlisted,57XX,CBRN Defense,L
+Marine Corps,Enlisted,58XX,Military Police and Corrections,M
+Marine Corps,Officer,58XX,Military Police Officer,M
+Marine Corps,Enlisted,59XX,Electronics Maintenance,M
+Marine Corps,Enlisted,60XX,Aircraft Maintenance,H
+Marine Corps,Officer,60XX,Aircraft Maintenance Officer,H
+Marine Corps,Enlisted,61XX,Aircraft Maintenance (Rotary-Wing),H
+Marine Corps,Enlisted,62XX,Aircraft Maintenance (Fixed-Wing),H
+Marine Corps,Enlisted,63XX,Organizational Avionics Maintenance,H
+Marine Corps,Enlisted,64XX,Intermediate Avionics Maintenance,H
+Marine Corps,Enlisted,65XX,Aviation Ordnance,H
+Marine Corps,Enlisted,66XX,Aviation Logistics,H
+Marine Corps,Enlisted,68XX,Meteorology and Oceanography,M
+Marine Corps,Enlisted,70XX,Airfield Services,H
+Marine Corps,Enlisted,72XX,Air Control/Air Support/Antiair Warfare,H
+Marine Corps,Officer,72XX,Air Control Officer,H
+Marine Corps,Enlisted,73XX,Enlisted Flight Crews,H
+Marine Corps,Officer,75XX,Pilots/Naval Flight Officers,H
+Marine Corps,Enlisted,80XX,Miscellaneous Requirements,M
+Marine Corps,Enlisted,99XX,Trainee,M
+Coast Guard,Enlisted,AET,Aviation Electrical Technician,H
+Coast Guard,Enlisted,AMT,Aviation Maintenance Technician,H
+Coast Guard,Enlisted,AST,Aviation Survival Technician,H
+Coast Guard,Enlisted,BM,Boatswain's Mate,H
+Coast Guard,Enlisted,DC,Damage Controlman,H
+Coast Guard,Enlisted,EM,Electrician's Mate,M
+Coast Guard,Enlisted,ET,Electronics Technician,M
+Coast Guard,Enlisted,FS,Food Service Specialist,L
+Coast Guard,Enlisted,FT,Fire Control Technician,L
+Coast Guard,Enlisted,GM,Gunner's Mate,H
+Coast Guard,Enlisted,HS,Health Services Technician,L
+Coast Guard,Enlisted,IS,Intelligence Specialist,L
+Coast Guard,Enlisted,IT,Information Systems Technician,L
+Coast Guard,Enlisted,IV,Investigator,L
+Coast Guard,Enlisted,MK,Machinery Technician,H
+Coast Guard,Enlisted,MST,Marine Science Technician,L
+Coast Guard,Enlisted,MU,Musician,M
+Coast Guard,Enlisted,OS,Operations Specialist,L
+Coast Guard,Enlisted,PA,Public Affairs Specialist,L
+Coast Guard,Enlisted,PS,Port Securityman,M
+Coast Guard,Enlisted,QM,Quartermaster,M
+Coast Guard,Enlisted,RD,Radarman,L
+Coast Guard,Enlisted,SK,Storekeeper,L
+Coast Guard,Enlisted,YN,Yeoman,L

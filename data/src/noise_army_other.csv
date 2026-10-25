@@ -1,0 +1,171 @@
+branch,component,code,title,noise
+Army,Officer,01A,Officer Generalist,M
+Army,Officer,02A,Combat Arms Generalist,H
+Army,Officer,02B,Infantry/Armor Immaterial,H
+Army,Officer,02C,Infantry/Armor/Field Artillery/Engineer Immaterial,H
+Army,Officer,11A,Infantry Officer,H
+Army,Officer,12A,Engineer Officer,H
+Army,Officer,12B,Combat Engineer Officer,H
+Army,Officer,12D,Facilities/Contract Construction Management Engineer,M
+Army,Officer,13A,Field Artillery Officer,H
+Army,Officer,14A,Air Defense Artillery Officer,H
+Army,Officer,15A,Aviation Officer,H
+Army,Officer,15B,Aviation Combined Arms Operations,H
+Army,Officer,15C,Aviation All-Source Intelligence,H
+Army,Officer,18A,Special Forces Officer,H
+Army,Officer,19A,Armor Officer,H
+Army,Officer,19B,Armor,H
+Army,Officer,19C,Cavalry,H
+Army,Officer,21A,Engineer General (now 12A),H
+Army,Officer,21B,Combat Engineer (now 12B),H
+Army,Officer,21D,Facilities/Contract Construction Management Engineer,M
+Army,Officer,24A,Telecommunications Systems Engineer,L
+Army,Officer,24B,Data Systems Engineer,L
+Army,Officer,24X,Designated Telecommunications Systems Engineer,L
+Army,Officer,24Z,Information Systems Engineer,L
+Army,Officer,25A,Signal Officer,M
+Army,Officer,27A,Judge Advocate General,L
+Army,Officer,27B,Military Judge,L
+Army,Officer,29A,Electronic Warfare Officer,L
+Army,Officer,30A,Information Operations Officer,L
+Army,Officer,31A,Military Police Officer,M
+Army,Officer,34A,Strategic Intelligence Officer,L
+Army,Officer,35C,Imagery Intelligence,L
+Army,Officer,35D,All Source Intelligence,L
+Army,Officer,35E,Counter Intelligence,L
+Army,Officer,35F,Human Intelligence,L
+Army,Officer,35G,Signals Intelligence/Electronic Warfare,M
+Army,Officer,36A,Financial Manager,L
+Army,Officer,37A,Psychological Operations,L
+Army,Officer,38A,Civil Affairs,L
+Army,Officer,40A,Space Operations,H
+Army,Officer,40C,Army Astronaut,H
+Army,Officer,42B,Human Resources Officer,L
+Army,Officer,42C,Army Bands,H
+Army,Officer,42H,Senior Human Resources Officer,L
+Army,Officer,46A,Public Affairs,L
+Army,Officer,47A,USMA Professor,L
+Army,Officer,48A,Foreign Area Officer,L
+Army,Officer,49A,Operations Research/Systems Analysis,L
+Army,Officer,51A,Systems Development,L
+Army,Officer,51C,Contract and Industrial Management,L
+Army,Officer,51R,Systems Automation Acquisition and Engineering,L
+Army,Officer,51S,Research and Engineering,M
+Army,Officer,51T,Test and Evaluation,M
+Army,Officer,51Z,Acquisition,L
+Army,Officer,52B,Nuclear and Counterproliferation,L
+Army,Officer,53A,Information Systems Management,L
+Army,Officer,56A,Command and Unit Chaplain,L
+Army,Officer,57A,Simulations Operations Officer,L
+Army,Officer,59A,Strategic Plans and Policy,L
+Army,Officer,60A,Operational Medicine,L
+Army,Officer,60C,Preventive Medicine Officer,L
+Army,Officer,60D,Occupational Medicine Officer,L
+Army,Officer,60W,Psychiatrist,L
+Army,Officer,61F,Internist,L
+Army,Officer,61H,Family Medicine,L
+Army,Officer,61J,General Surgeon,L
+Army,Officer,61M,Orthopedic Surgeon,L
+Army,Officer,61N,Flight Surgeon,M
+Army,Officer,62A,Emergency Physician,L
+Army,Officer,62B,Field Surgeon,M
+Army,Officer,63A,General Dentist,M
+Army,Officer,63B,Comprehensive Dentist,M
+Army,Officer,64A,Field Veterinary Service,L
+Army,Officer,65A,Occupational Therapy,L
+Army,Officer,65B,Physical Therapy,L
+Army,Officer,65C,Dietitian,L
+Army,Officer,65D,Physician Assistant,L
+Army,Officer,66B,Army Public Health Nurse,L
+Army,Officer,66C,Psychiatric/Mental Health Nurse,L
+Army,Officer,66E,Perioperative Nurse,L
+Army,Officer,66F,Nurse Anesthetist,L
+Army,Officer,66H,Medical-Surgical Nurse,L
+Army,Officer,66N,Generalist Nurse,L
+Army,Officer,66P,Family Nurse Practitioner,L
+Army,Officer,67A,Health Services,L
+Army,Officer,67J,Aeromedical Evacuation,H
+Army,Officer,70A,Health Care Administration,L
+Army,Officer,70B,Health Services Administration,L
+Army,Officer,72C,Audiology,L
+Army,Officer,73A,Social Work,L
+Army,Officer,73B,Clinical Psychology,L
+Army,Officer,74A,Chemical Biological Radiological and Nuclear (CBRN) Officer,L
+Army,Officer,88A,Transportation Officer,M
+Army,Officer,88B,Traffic Management,M
+Army,Officer,88C,Marine and Terminal Operations,M
+Army,Officer,88D,Motor/Rail Transportation,M
+Army,Officer,89E,Explosive Ordnance Disposal Officer,H
+Army,Officer,90A,Logistics Officer,L
+Army,Officer,91A,Maintenance and Munitions Materiel Officer,L
+Army,Officer,92A,Quartermaster Officer,L
+Army,Officer,92D,Aerial Delivery and Materiel,M
+Army,Officer,92F,Petroleum and Water,M
+Army,Warrant,120A,Construction Engineering Technician,H
+Army,Warrant,125D,Geospatial Engineering Technician,L
+Army,Warrant,131A,Field Artillery Targeting Technician,L
+Army,Warrant,140A,Command and Control Systems Integrator,H
+Army,Warrant,140E,Air and Missile Defense Systems Tactician/Technician,L
+Army,Warrant,140X,Air Defense Artillery Immaterial,M
+Army,Warrant,150A,Air Traffic and Air Space Management Technician,M
+Army,Warrant,150U,Unmanned Aircraft Systems Operations Technician,M
+Army,Warrant,151A,Aviation Maintenance Technician,H
+Army,Warrant,152B,OH-58A/C Scout Pilot,H
+Army,Warrant,152C,OH-6 Pilot,H
+Army,Warrant,152D,OH-58D Pilot,H
+Army,Warrant,152F,AH-64A Attack Pilot,H
+Army,Warrant,152H,AH-64D Attack Pilot,H
+Army,Warrant,153A,Rotary Wing Aviator,H
+Army,Warrant,153B,UH-1 Pilot,H
+Army,Warrant,153D,UH-60 Pilot,H
+Army,Warrant,153E,MH-60 Pilot,H
+Army,Warrant,153L,UH-72A Pilot,H
+Army,Warrant,153M,UH-60M Pilot,H
+Army,Warrant,154C,CH-47D Pilot,H
+Army,Warrant,154E,MH-47 Pilot,H
+Army,Warrant,154F,CH-47F Pilot,H
+Army,Warrant,155A,Fixed Wing Aviator,H
+Army,Warrant,155E,C-12 Pilot,H
+Army,Warrant,155F,Jet Aircraft Pilot,H
+Army,Warrant,155G,RC-7/EO-5 Pilot,H
+Army,Warrant,180A,Special Forces Warrant Officer,H
+Army,Warrant,210A,Construction Engineering Technician (now 120A),H
+Army,Warrant,250N,Network Management Technician,L
+Army,Warrant,251A,Information Systems Technician,L
+Army,Warrant,254A,Signal Systems Support Technician,L
+Army,Warrant,255A,Information Services Technician,L
+Army,Warrant,255N,Network Management Technician,L
+Army,Warrant,255S,Information Protection Technician,L
+Army,Warrant,270A,Legal Administrator,L
+Army,Warrant,290A,Electronic Warfare Technician,L
+Army,Warrant,311A,CID Special Agent,M
+Army,Warrant,350F,All Source Intelligence Technician,L
+Army,Warrant,350G,Imagery Intelligence Technician,L
+Army,Warrant,351L,Counterintelligence Technician,L
+Army,Warrant,351M,Human Intelligence Collection Technician,L
+Army,Warrant,352N,Signals Intelligence Analysis Technician,M
+Army,Warrant,352P,Voice Intercept Technician,H
+Army,Warrant,352S,Signals Collection Technician,H
+Army,Warrant,353T,IEW Systems Maintenance Technician,L
+Army,Warrant,420A,Human Resources Technician,L
+Army,Warrant,420C,Bandmaster,H
+Army,Warrant,640A,Food Safety Officer,L
+Army,Warrant,670A,Health Services Maintenance Technician,L
+Army,Warrant,740A,CBRN Warrant Officer,L
+Army,Warrant,880A,Marine Deck Officer,H
+Army,Warrant,881A,Marine Engineering Officer,H
+Army,Warrant,882A,Mobility Officer,L
+Army,Warrant,890A,Ammunition Technician,L
+Army,Warrant,913A,Armament Systems Maintenance Warrant Officer,M
+Army,Warrant,914A,Allied Trades Warrant Officer,M
+Army,Warrant,915A,Automotive Maintenance Warrant Officer,M
+Army,Warrant,915E,Senior Automotive Maintenance/Ordnance Logistics Warrant Officer,M
+Army,Warrant,919A,Engineer Equipment Maintenance Warrant Officer,M
+Army,Warrant,920A,Property Accounting Technician,L
+Army,Warrant,920B,Supply Systems Technician,L
+Army,Warrant,921A,Airdrop Systems Technician,H
+Army,Warrant,922A,Food Service Technician,L
+Army,Warrant,923A,Petroleum Technician,L
+Army,Warrant,948B,Electronic Systems Maintenance Warrant Officer,L
+Army,Warrant,948D,Electronic Missile Systems Maintenance Warrant Officer,L
+Army,Warrant,948E,Senior Electronics Maintenance Warrant Officer,L

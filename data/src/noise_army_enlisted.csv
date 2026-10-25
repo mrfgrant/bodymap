@@ -1,0 +1,209 @@
+branch,component,code,title,noise
+Army,Enlisted,11B,Infantryman,H
+Army,Enlisted,11C,Indirect Fire Infantryman,H
+Army,Enlisted,11Z,Infantry Senior Sergeant,H
+Army,Enlisted,12B,Combat Engineer,H
+Army,Enlisted,12C,Bridge Crewmember,M
+Army,Enlisted,12D,Diver,L
+Army,Enlisted,12G,Quarrying Specialist (RC),M
+Army,Enlisted,12H,Construction Engineering Supervisor,H
+Army,Enlisted,12K,Plumber,M
+Army,Enlisted,12M,Firefighter,H
+Army,Enlisted,12N,Horizontal Construction Engineer,H
+Army,Enlisted,12P,Prime Power Production Specialist,H
+Army,Enlisted,12Q,Power Line Distribution Specialist (RC),H
+Army,Enlisted,12R,Interior Electrician,L
+Army,Enlisted,12T,Technical Engineer,M
+Army,Enlisted,12V,Concrete and Asphalt Equipment Operator,H
+Army,Enlisted,12W,Carpentry and Masonry Specialist,H
+Army,Enlisted,12X,General Engineering Supervisor,L
+Army,Enlisted,12Y,Geospatial Engineer,M
+Army,Enlisted,12Z,Combat Engineering Senior Sergeant,H
+Army,Enlisted,13B,Cannon Crewmember,H
+Army,Enlisted,13C,Tactical Automated Fire Control Systems Specialist,H
+Army,Enlisted,13D,Field Artillery Automated Tactical Data System Specialist,H
+Army,Enlisted,13E,Cannon Fire Direction Specialist,H
+Army,Enlisted,13F,Fire Support Specialist,H
+Army,Enlisted,13M,MLRS/HIMARS Crewmember,H
+Army,Enlisted,13P,MLRS Operational Fire Direction Specialist,H
+Army,Enlisted,13R,Field Artillery Firefinder Radar Operator,H
+Army,Enlisted,13S,Field Artillery Surveyor,M
+Army,Enlisted,13T,Field Artillery Surveyor/Meteorological Crewmember,M
+Army,Enlisted,13W,Field Artillery Meteorological Crewmember,M
+Army,Enlisted,13Z,Field Artillery Senior Sergeant,H
+Army,Enlisted,14E,Patriot Fire Control Enhanced Operator/Maintainer,H
+Army,Enlisted,14J,Air Defense C4I Tactical Operations Center Enhanced Operator/Maintainer,H
+Army,Enlisted,14M,Man Portable Air Defense System Crewmember (RC),H
+Army,Enlisted,14S,Air and Missile Defense (AMD) Crewmember,H
+Army,Enlisted,14T,Patriot Launching Station Enhanced Operator/Maintainer,H
+Army,Enlisted,14Z,Air Defense Artillery Senior Sergeant,H
+Army,Enlisted,15B,Aircraft Powerplant Repairer,H
+Army,Enlisted,15D,Aircraft Powertrain Repairer,H
+Army,Enlisted,15F,Aircraft Electrician,H
+Army,Enlisted,15G,Aircraft Structural Repairer,H
+Army,Enlisted,15H,Aircraft Pneudraulics Repairer,H
+Army,Enlisted,15J,OH-58D/ARH Armament/Electrical/Avionics Systems Repairer,H
+Army,Enlisted,15K,Aircraft Components Repair Supervisor,H
+Army,Enlisted,15M,UH-1 Helicopter Repairer (RC),H
+Army,Enlisted,15N,Avionics Mechanic,H
+Army,Enlisted,15P,Aviation Operations Specialist,H
+Army,Enlisted,15Q,Air Traffic Control Operator,H
+Army,Enlisted,15R,AH-64 Attack Helicopter Repairer,H
+Army,Enlisted,15S,OH-58D/ARH Helicopter Repairer,H
+Army,Enlisted,15T,UH-60 Helicopter Repairer,H
+Army,Enlisted,15U,CH-47 Helicopter Repairer,H
+Army,Enlisted,15V,Observation/Scout Helicopter Repairer (RC),H
+Army,Enlisted,15W,Unmanned Aerial Vehicle Operator,M
+Army,Enlisted,15X,AH-64A Armament/Electrical/Avionics Systems Repairer,H
+Army,Enlisted,15Y,AH-64D Armament/Electrical/Avionics Systems Repairer,H
+Army,Enlisted,15Z,Aircraft Maintenance Senior Sergeant,H
+Army,Enlisted,18B,Special Forces Weapons Sergeant,H
+Army,Enlisted,18C,Special Forces Engineer Sergeant,H
+Army,Enlisted,18D,Special Forces Medical Sergeant,H
+Army,Enlisted,18E,Special Forces Communications Sergeant,H
+Army,Enlisted,18F,Special Forces Assistant Operations and Intelligence Sergeant,H
+Army,Enlisted,18Z,Special Forces Senior Sergeant,H
+Army,Enlisted,19D,Cavalry Scout,H
+Army,Enlisted,19K,M1 Armor Crewman,H
+Army,Enlisted,19Z,Armor Senior Sergeant,H
+Army,Enlisted,21B,Combat Engineer (now 12B),H
+Army,Enlisted,21C,Bridge Crewmember (now 12C),H
+Army,Enlisted,21D,Diver (now 12D),M
+Army,Enlisted,21E,Construction Equipment Operator (now 12N),H
+Army,Enlisted,21G,Quarrying Specialist (RC) (now 12G),H
+Army,Enlisted,21H,Construction Engineering Supervisor (now 12H),H
+Army,Enlisted,21K,Plumber (now 12K),M
+Army,Enlisted,21M,Firefighter (now 12M),H
+Army,Enlisted,21N,Horizontal Construction Engineer (now 12N),H
+Army,Enlisted,21P,Prime Power Production Specialist (now 12P),H
+Army,Enlisted,21Q,Power Line Distribution Specialist (RC) (now 12Q),H
+Army,Enlisted,21R,Interior Electrician (now 12R),L
+Army,Enlisted,21T,Technical Engineer (now 12T),M
+Army,Enlisted,21V,Concrete and Asphalt Equipment Operator (now 12V),H
+Army,Enlisted,21W,Carpentry and Masonry Specialist (now 12W),H
+Army,Enlisted,21X,General Engineering Supervisor (now 12X),M
+Army,Enlisted,21Y,Geospatial Engineer (now 12Y),L
+Army,Enlisted,21Z,Combat Engineering Senior Sergeant (now 12Z),H
+Army,Enlisted,25B,Information Technology Specialist,L
+Army,Enlisted,25C,Radio Operator-Maintainer,M
+Army,Enlisted,25E,Electromagnetic Spectrum Manager,L
+Army,Enlisted,25F,Network Switching Systems Operator-Maintainer,L
+Army,Enlisted,25L,Cable Systems Installer-Maintainer,M
+Army,Enlisted,25M,Multimedia Illustrator,L
+Army,Enlisted,25N,Nodal Network Systems Operator-Maintainer,L
+Army,Enlisted,25P,Microwave Systems Operator-Maintainer,L
+Army,Enlisted,25Q,Multichannel Transmission Systems Operator-Maintainer,M
+Army,Enlisted,25R,Visual Information Equipment Operator-Maintainer,L
+Army,Enlisted,25S,Satellite Communication Systems Operator-Maintainer,M
+Army,Enlisted,25T,Satellite/Microwave Systems Chief,L
+Army,Enlisted,25U,Signal Support Systems Specialist,L
+Army,Enlisted,25V,Combat Documentation/Production Specialist,L
+Army,Enlisted,25W,Telecommunications Operations Chief,M
+Army,Enlisted,25X,Senior Signal Sergeant,L
+Army,Enlisted,25Z,Visual Information Operations Chief,L
+Army,Enlisted,27D,Paralegal Specialist,L
+Army,Enlisted,29E,Electronic Warfare Specialist,L
+Army,Enlisted,31B,Military Police,M
+Army,Enlisted,31D,CID Special Agent,M
+Army,Enlisted,31E,Internment/Resettlement Specialist,L
+Army,Enlisted,35F,Intelligence Analyst,L
+Army,Enlisted,35G,Imagery Analyst,L
+Army,Enlisted,35H,Common Ground Station (CGS) Analyst,L
+Army,Enlisted,35L,Counter Intelligence Agent,L
+Army,Enlisted,35M,Human Intelligence Collector,L
+Army,Enlisted,35N,Signals Intelligence Analyst,L
+Army,Enlisted,35P,Cryptologic Linguist,L
+Army,Enlisted,35S,Signals Collector/Analyst,M
+Army,Enlisted,35T,Military Intelligence Systems Maintainer/Integrator,L
+Army,Enlisted,35X,Intelligence Senior Sergeant/Chief Intelligence Sergeant,L
+Army,Enlisted,35Y,Chief Counter Intelligence/Human Intelligence Sergeant,L
+Army,Enlisted,35Z,Signals Intelligence (Electronic Warfare) Senior Sergeant/Chief,M
+Army,Enlisted,36B,Financial Management Technician,L
+Army,Enlisted,37F,Psychological Operations Specialist,L
+Army,Enlisted,38B,Civil Affairs Specialist,L
+Army,Enlisted,42A,Human Resources Specialist,L
+Army,Enlisted,42F,Human Resources Information Systems Management Specialist,L
+Army,Enlisted,42R,Army Bandperson,H
+Army,Enlisted,42S,Special Band Member,H
+Army,Enlisted,43F,Human Resources Information Systems Management Specialist,L
+Army,Enlisted,46Q,Public Affairs Specialist,L
+Army,Enlisted,46R,Public Affairs Broadcast Specialist,M
+Army,Enlisted,46Z,Chief Public Affairs NCO,L
+Army,Enlisted,51C,Acquisition Logistics and Technology Contracting NCO,L
+Army,Enlisted,56M,Chaplain Assistant,L
+Army,Enlisted,68A,Biomedical Equipment Specialist,L
+Army,Enlisted,68D,Operating Room Specialist,L
+Army,Enlisted,68E,Dental Specialist,M
+Army,Enlisted,68G,Patient Administration Specialist,L
+Army,Enlisted,68H,Optical Laboratory Specialist,L
+Army,Enlisted,68J,Medical Logistics Specialist,L
+Army,Enlisted,68K,Medical Laboratory Specialist,L
+Army,Enlisted,68M,Nutrition Care Specialist,L
+Army,Enlisted,68P,Radiology Specialist,L
+Army,Enlisted,68Q,Pharmacy Specialist,L
+Army,Enlisted,68R,Veterinary Food Inspection Specialist,L
+Army,Enlisted,68S,Preventive Medicine Specialist,L
+Army,Enlisted,68T,Animal Care Specialist,L
+Army,Enlisted,68V,Respiratory Specialist,L
+Army,Enlisted,68W,Health Care Specialist (Combat Medic),L
+Army,Enlisted,68X,Behavioral Health Specialist,L
+Army,Enlisted,68Z,Chief Medical NCO,L
+Army,Enlisted,74D,Chemical Biological Radiological and Nuclear (CBRN) Specialist,M
+Army,Enlisted,79R,Recruiter NCO,L
+Army,Enlisted,79S,Career Counselor,L
+Army,Enlisted,79T,Recruiting and Retention NCO (Army National Guard),L
+Army,Enlisted,79V,Retention and Transition NCO USAR,L
+Army,Enlisted,88H,Cargo Specialist,M
+Army,Enlisted,88K,Watercraft Operator,M
+Army,Enlisted,88L,Watercraft Engineer,M
+Army,Enlisted,88M,Motor Transport Operator,M
+Army,Enlisted,88N,Transportation Management Coordinator,L
+Army,Enlisted,88P,Railway Equipment Repairer (RC),H
+Army,Enlisted,88T,Railway Section Repairer (RC),H
+Army,Enlisted,88U,Railway Operations Crewmember (RC),H
+Army,Enlisted,88Z,Transportation Senior Sergeant,H
+Army,Enlisted,89A,Ammunition Stock Control and Accounting Specialist,L
+Army,Enlisted,89B,Ammunition Specialist,L
+Army,Enlisted,89D,Explosive Ordnance Disposal Specialist,H
+Army,Enlisted,91A,M1 Abrams Tank System Maintainer (formerly 63A),H
+Army,Enlisted,91B,Wheeled Vehicle Mechanic (formerly 63B),H
+Army,Enlisted,91C,Utilities Equipment Repairer (formerly 52C),H
+Army,Enlisted,91D,Power-Generation Equipment Repairer (formerly 52D),H
+Army,Enlisted,91E,Allied Trades Specialist (formerly 44E),H
+Army,Enlisted,91F,Small Arms/Artillery Repairer (formerly 45B),M
+Army,Enlisted,91G,Fire Control Repairer (formerly 45G),H
+Army,Enlisted,91H,Track Vehicle Repairer (formerly 63H),H
+Army,Enlisted,91J,Quartermaster and Chemical Equipment Repairer (formerly 63J),M
+Army,Enlisted,91K,Armament Repairer (formerly 45K),M
+Army,Enlisted,91L,Construction Equipment Repairer (formerly 62B),H
+Army,Enlisted,91M,Bradley Fighting Vehicle System Maintainer (formerly 63M),H
+Army,Enlisted,91P,Artillery Mechanic (formerly 63D),H
+Army,Enlisted,91W,Metal Worker (formerly 44B),H
+Army,Enlisted,91X,Maintenance Supervisor (formerly 63X),H
+Army,Enlisted,91Z,Mechanical Maintenance Supervisor (formerly 63Z),H
+Army,Enlisted,92A,Automated Logistical Specialist,L
+Army,Enlisted,92F,Petroleum Supply Specialist,L
+Army,Enlisted,92G,Food Service Specialist (formerly 94B),L
+Army,Enlisted,92L,Petroleum Laboratory Specialist,L
+Army,Enlisted,92M,Mortuary Affairs Specialist,L
+Army,Enlisted,92R,Parachute Rigger,L
+Army,Enlisted,92S,Shower/Laundry and Clothing Repair Specialist,L
+Army,Enlisted,92W,Water Treatment Specialist,M
+Army,Enlisted,92Y,Unit Supply Specialist,L
+Army,Enlisted,92Z,Senior Noncommissioned Logistician,L
+Army,Enlisted,94A,Land Combat Electronic Missile System Repairer,M
+Army,Enlisted,94D,Air Traffic Control Equipment Repairer,L
+Army,Enlisted,94E,Radio and Communications Security (COMSEC) Repairer,M
+Army,Enlisted,94F,Computer Detection Systems Repairer,L
+Army,Enlisted,94H,Test Measurement and Diagnostic Equipment (TMDE) Maintenance Support Specialist,L
+Army,Enlisted,94K,Apache Attack Helicopter Systems Repairer,H
+Army,Enlisted,94L,Avionics Communications Equipment Repairer,H
+Army,Enlisted,94M,Radar Repairer,M
+Army,Enlisted,94P,Multiple Launch Rocket System Repairer,M
+Army,Enlisted,94R,Avionics and Survivability Equipment Repairer,M
+Army,Enlisted,94S,Patriot System Repairer,H
+Army,Enlisted,94T,Avenger System Repairer,H
+Army,Enlisted,94W,Electronic Maintenance Chief,H
+Army,Enlisted,94X,Senior Missile Systems Maintainer,H
+Army,Enlisted,94Y,Integrated Family of Test Equipment (IFTE) Operator and Maintainer,M
+Army,Enlisted,94Z,Senior Electronic Maintenance Chief,H

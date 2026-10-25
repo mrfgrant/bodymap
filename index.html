@@ -79,6 +79,9 @@ input[type=text],input[type=number],input[type=email],input[type=tel],select{wid
 .sug button:hover,.sug button:focus-visible{background:var(--soft)}
 .sug .code{font-family:var(--mono);font-weight:500;min-width:4ch}
 .sug .sub{color:var(--muted);font-size:.85em}
+.sug .t{display:flex;flex-direction:column;gap:2px;min-width:0}
+.nz{display:inline-block;font-family:var(--mono);font-size:.7em;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:2px;border:1px solid var(--line);margin-left:4px}
+.nz.nH{border-color:var(--strong);color:var(--strong)}.nz.nM{border-color:var(--plausible);color:var(--plausible)}.nz.nL{border-color:var(--weak);color:var(--weak)}
 .link{background:transparent;border:0;color:var(--accent);text-decoration:underline;padding:4px 0;text-align:left}
 .chosen{display:flex;gap:12px;align-items:center;background:var(--surface);border:1.5px solid var(--ink);border-radius:2px;padding:12px 14px}
 .chosen .code{font-family:var(--mono);font-weight:500;font-size:1.3em}
@@ -187,7 +190,7 @@ svg.body{width:100%;height:auto;display:block}
     <!-- 1 Job -->
     <section class="step" id="s1">
       <div class="lead"><span class="eyebrow">Nexus247.ai · Where do I start</span><h1>What was your job in the service?</h1><p class="muted">Type the code or just what you did. "Cook" works.</p></div>
-      <div class="field"><label for="job">Job or MOS</label><input type="text" id="job" autocomplete="off" placeholder="94B, cook, anti-tank..."><div class="sug" id="job-sug" hidden></div></div>
+      <div class="field"><label for="job">Job or MOS</label><input type="text" id="job" autocomplete="off" placeholder="Loading the job list..." disabled><div class="sug" id="job-sug" hidden></div></div>
       <div id="job-chosen" hidden></div>
       <button type="button" class="link" id="job-help">I don't remember my code</button>
       <div id="job-list" class="cards" hidden></div>
@@ -468,15 +471,55 @@ const PLAIN = {
   "Traumatic brain injury residuals":"Lasting effects of a head injury","Migraine or post-traumatic headaches":"Bad headaches","PTSD":"PTSD or trauma symptoms"
 };
 const plain = n => PLAIN[n] || n;
-const JOBS = [{code:"94B",words:"cook food service dfac kitchen army 92g"},{code:"92G",words:"cook food service dfac kitchen army 94b"},{code:"0352",words:"anti-tank antitank tow javelin missile marine infantry gunner 03"}];
+/* ---------- MOS lookup data: every job code across all branches, loaded from data/mos.json ---------- */
+const DATA = {jobs:[], profiles:{}, byKey:{}, ready:false};
+const EXTRA_JOBS = [{k:"Marine Corps|Enlisted|0352", code:"0352", branch:"Marine Corps", comp:"Enlisted", title:"Anti-Tank Missileman", noise:"H", noiseSrc:"va", profile:"infantry", kw:"anti tank antitank tow javelin missile marine infantry gunner"}];
+const OVERRIDES = {"Army|Enlisted|94B|legacy":"94B", "Army|Enlisted|92G":"94B", "Marine Corps|Enlisted|0352":"0352"};
+const NOISE_WORD = {H:"Highly Probable", M:"Moderate", L:"Low"};
+const BRANCHES = ["Army","Marine Corps","Navy","Air Force","Coast Guard"];
+async function loadData(){
+  try{
+    const [m, p] = await Promise.all([fetch("data/mos.json").then(r => r.json()), fetch("data/profiles.json").then(r => r.json())]);
+    DATA.jobs = m.jobs.concat(EXTRA_JOBS); DATA.profiles = p;
+    for(const j of DATA.jobs) DATA.byKey[j.k] = j;
+    DATA.ready = true;
+  }catch(e){ DATA.ready = false; $("job").placeholder = "Job list could not load. Check your connection and reopen."; }
+  $("job").disabled = !DATA.ready; if(DATA.ready) $("job").placeholder = "94B, cook, 2A5X1, truck driver...";
+  return DATA.ready;
+}
 const LOCWIN = {vietnam:[1962,1975],thailand:[1962,1976],dmz:[1967,1971],aoother:[1962,1980],gulf:[1990,2026],somalia:[1990,2026],afghan:[2001,2026],post911:[2001,2026],isrtur:[1990,2026],lejeune:[1953,1987]};
 
 /* ---------- state ---------- */
 const S = {step:1, mos:null, y1:"", y2:"", locs:new Set(), view:"front", sel:null, marked:new Map(), dxi:0, seci:0, secQ:[], sent:false};
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const mosOf = c => MOS[ALIAS[c] || c];
-const mosCode = () => ALIAS[S.mos] || S.mos;
+const mosCache = {};
+function mosOf(k){
+  if(mosCache[k]) return mosCache[k];
+  let j = DATA.byKey[k];
+  if(!j && k && k.startsWith("family|")){ const [, br, pid] = k.split("|"); j = {k, code:"", branch:br, comp:"", title:(DATA.profiles[pid] || {}).name || "General service", noise:null, profile:pid, family:true}; }
+  if(!j) return null;
+  const ov = OVERRIDES[k] && MOS[OVERRIDES[k]];
+  let m;
+  if(ov){ m = {...ov, name:ov.name, regions:{...ov.regions}, hazards:{...ov.hazards}}; }
+  else {
+    const p = DATA.profiles[j.profile] || DATA.profiles.generic;
+    m = {name:j.title, branch:j.branch, blurb:p.blurb, start:p.start, hazards:{...p.hazards}, regions:{}};
+    for(const [id, r] of Object.entries(p.regions)) m.regions[id] = {...r, hazards:[...r.hazards]};
+    /* the VA noise listing decides the ears, whatever the job family says */
+    const ears = m.regions.ears ? {...m.regions.ears, hazards:[...m.regions.ears.hazards]} : {s:1, hazards:["range"], conds:[["Tinnitus","DC 6260"],["Hearing loss","DC 6100"]], evidence:["DD-214 showing the job","Statement on when the ringing or hearing trouble began","Current audiogram"]};
+    if(j.noise === "H"){ ears.s = 3; ears.note = "VA's Duty MOS Noise Exposure Listing rates this job Highly Probable, so hazardous noise exposure is conceded from the job itself. This is usually the strongest link on the map."; }
+    else if(j.noise === "M"){ ears.s = 2; ears.note = "VA's noise listing rates this job Moderate. VA concedes the exposure, but a statement on what was loud and how often helps."; }
+    else if(j.noise === "L"){ ears.s = 1; ears.note = "VA's noise listing rates this job Low, so the job alone will not carry a hearing claim. Look for other exposure: ranges, generators, a loud unit, or a different duty than the title suggests."; }
+    else { ears.s = Math.min(ears.s, 2); ears.note = "Noise rating depends on the exact job code. Add it later for a firmer answer."; }
+    if(!ears.hazards.includes("range")) ears.hazards.push("range");
+    m.regions.ears = ears;
+  }
+  m.code = j.code; m.branch = j.branch; m.comp = j.comp; m.noise = j.noise; m.noiseSrc = j.noiseSrc; m.legacy = !!j.legacy; m.successor = j.successor; m.successorTitle = j.successorTitle; m.family = !!j.family; m.profile = j.profile;
+  m.blurb = [j.branch, j.comp, j.legacy ? "older code, now " + j.successor : null, j.noise ? "noise: " + NOISE_WORD[j.noise] : null].filter(Boolean).join(" · ");
+  mosCache[k] = m; return m;
+}
+const mosCode = () => S.mos;
 
 /* programs */
 function matched(){
@@ -491,34 +534,70 @@ function matched(){
   return out;
 }
 function regions(){
-  const m = S.mos ? mosOf(S.mos).regions : {}, pr = matched();
+  const mm = S.mos && mosOf(S.mos); const m = mm ? mm.regions : {}, pr = matched();
   return AREAS.map(a => { const r = m[a.id] || null, pres = pr.filter(p => PROGS[p.id].conds[a.id]).map(p => ({...p, conds:PROGS[p.id].conds[a.id]}));
     return (r || pres.length) ? {...a, m:r, pres, s:r ? r.s : 0} : null; }).filter(Boolean);
 }
 const byId = id => regions().find(r => r.id === id);
 
-/* ---------- step 1 ---------- */
-function jobSearch(q){
-  q = q.trim().toLowerCase(); const box = $("job-sug");
-  if(!q){ box.hidden = true; return; }
-  const hits = JOBS.filter(j => j.code.toLowerCase().startsWith(q) || j.words.split(" ").some(w => w.startsWith(q)));
-  box.innerHTML = hits.length ? hits.map(j => { const m = mosOf(j.code); return `<button type="button" data-c="${j.code}"><span class="code">${j.code}</span><span>${esc(m.name)} <span class="sub">${esc(m.branch)}${ALIAS[j.code] ? ", later code for " + ALIAS[j.code] : ""}</span></span></button>`; }).join("")
-    : `<button type="button" disabled><span class="sub">Not loaded yet. This preview knows 94B, 92G and 0352. The full version knows every MOS.</span></button>`;
-  box.hidden = false;
-  box.querySelectorAll("button[data-c]").forEach(b => b.addEventListener("click", () => pickJob(b.dataset.c)));
+/* ---------- step 1: MOS lookup ---------- */
+function searchJobs(q){
+  q = q.trim().toLowerCase(); if(!q) return [];
+  const toks = q.split(/\s+/).filter(Boolean), qc = q.replace(/[\s-]/g, "").toUpperCase();
+  const out = [];
+  for(const j of DATA.jobs){
+    const code = j.code.toUpperCase(); let sc = 0;
+    if(code && code === qc) sc = 100;
+    else if(code && qc.length >= 2 && code.startsWith(qc)) sc = 60 - (code.length - qc.length);
+    else if(j.branch === "Marine Corps" && /^\d{4}$/.test(qc) && code.endsWith("XX") && code.slice(0,2) === qc.slice(0,2)) sc = 55;
+    else if(code && qc.length >= 3 && code.includes(qc)) sc = 30;
+    if(!sc){
+      const tw = j.title.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean), kw = (j.kw || "").split(" ");
+      const hit = (words, tk) => tk.length <= 2 ? words.includes(tk) : words.some(w => w.startsWith(tk));
+      let all = true, pts = 0;
+      for(const tk of toks){
+        if(hit(tw, tk)) pts += tw[0].startsWith(tk) ? 40 : 30; else if(hit(kw, tk)) pts += 18; else { all = false; break; }
+      }
+      if(all) sc = pts;
+    }
+    if(sc){ if(j.legacy) sc -= 3; if(j.comp === "Officer" || j.comp === "Warrant") sc -= 5; sc += ({"Army":3,"Marine Corps":2,"Navy":1}[j.branch] || 0); out.push([sc, j]); }
+  }
+  out.sort((a,b) => b[0] - a[0] || a[1].code.localeCompare(b[1].code));
+  return out.slice(0, 8).map(x => x[1]);
 }
-function pickJob(c){
-  S.mos = c; const m = mosOf(c);
-  $("job-chosen").innerHTML = `<div class="chosen"><span class="code">${esc(c)}</span><span>${esc(m.name)}<br><span class="muted fine">${esc(m.blurb)}</span></span><button type="button" class="link x" id="job-clear">Change</button></div>`;
+function jobRow(j){
+  const noise = j.noise ? `<span class="nz n${j.noise}">${NOISE_WORD[j.noise]} noise</span>` : "";
+  const sub = [j.branch, j.comp, j.legacy ? "older code, now " + j.successor : null].filter(Boolean).join(" · ");
+  return `<button type="button" data-k="${esc(j.k)}"><span class="code">${esc(j.code)}</span><span class="t"><span>${esc(j.title)}</span><span class="sub">${esc(sub)} ${noise}</span></span></button>`;
+}
+function jobSearch(q){
+  const box = $("job-sug");
+  if(!q.trim()){ box.hidden = true; return; }
+  if(!DATA.ready){ box.innerHTML = `<button type="button" disabled><span class="sub">Loading the job list...</span></button>`; box.hidden = false; return; }
+  const hits = searchJobs(q);
+  box.innerHTML = hits.length ? hits.map(jobRow).join("")
+    : `<button type="button" disabled><span class="sub">No match. Try the code from your DD-214 (block 11), or plain words like "cook" or "truck driver". Or tap "I don't remember my code".</span></button>`;
+  box.hidden = false;
+  box.querySelectorAll("button[data-k]").forEach(b => b.addEventListener("click", () => pickJob(b.dataset.k)));
+}
+function pickJob(k){
+  const m = mosOf(k); if(!m) return;
+  S.mos = k;
+  $("job-chosen").innerHTML = `<div class="chosen"><span class="code">${esc(m.code || "?")}</span><span>${esc(m.name)}<br><span class="muted fine">${esc(m.blurb)}</span>${m.legacy && m.successorTitle ? `<br><span class="muted fine">Today that job is ${esc(m.successor)} ${esc(m.successorTitle)}.</span>` : ""}</span><button type="button" class="link x" id="job-clear">Change</button></div>`;
   $("job-chosen").hidden = false; $("job").parentNode.hidden = true; $("job-sug").hidden = true; $("job-list").hidden = true; $("job-help").hidden = true;
-  $("job-clear").addEventListener("click", () => { S.mos = null; $("job-chosen").hidden = true; $("job").parentNode.hidden = false; $("job-help").hidden = false; $("job").value = ""; $("job").focus(); nav(); });
+  $("job-clear").addEventListener("click", () => { S.mos = null; S.sel = null; $("job-chosen").hidden = true; $("job").parentNode.hidden = false; $("job-help").hidden = false; $("job").value = ""; $("job").focus(); nav(); });
   nav();
 }
 $("job").addEventListener("input", e => jobSearch(e.target.value));
 $("job-help").addEventListener("click", () => {
-  const l = $("job-list"); l.hidden = !l.hidden;
-  l.innerHTML = `<p class="muted fine">Pick the closest. Your DD-214 has the exact code in block 11.</p>` + JOBS.filter(j => !ALIAS[j.code]).map(j => { const m = mosOf(j.code); return `<button type="button" class="card" data-c="${j.code}"><span class="tick">✓</span><span class="t"><span>${esc(m.name)}</span><span class="sub">${esc(m.branch)} · ${j.code}</span></span></button>`; }).join("");
-  l.querySelectorAll("[data-c]").forEach(b => b.addEventListener("click", () => pickJob(b.dataset.c)));
+  const l = $("job-list"); l.hidden = !l.hidden; if(l.hidden) return;
+  const fam = Object.entries(DATA.profiles).filter(([id]) => id !== "generic").sort((a,b) => a[1].name.localeCompare(b[1].name));
+  l.innerHTML = `<p class="muted fine">No problem. Pick your branch, then the kind of work. Your DD-214 has the exact code in block 11 if you find it later.</p>` +
+    `<div class="field"><label>Branch</label><div class="grid2" id="fam-branch">${BRANCHES.map(b => `<button type="button" class="big" data-b="${b}" aria-pressed="false">${b}</button>`).join("")}</div></div>` +
+    `<div class="field" id="fam-wrap" hidden><label>Kind of work</label><div class="cards" id="fam-list">${fam.map(([id,p]) => `<button type="button" class="card" data-p="${id}"><span class="tick">✓</span><span class="t"><span>${esc(p.name)}</span><span class="sub">${esc(p.blurb)}</span></span></button>`).join("")}</div></div>`;
+  let br = null;
+  l.querySelectorAll("#fam-branch .big").forEach(b => b.addEventListener("click", () => { br = b.dataset.b; l.querySelectorAll("#fam-branch .big").forEach(x => x.setAttribute("aria-pressed", x === b)); $("fam-wrap").hidden = false; $("fam-wrap").scrollIntoView({behavior:"smooth", block:"nearest"}); }));
+  l.querySelectorAll("#fam-list .card").forEach(b => b.addEventListener("click", () => { if(!br){ $("fam-branch").scrollIntoView(); return; } pickJob(`family|${br}|${b.dataset.p}`); }));
 });
 
 /* ---------- step 2 ---------- */
@@ -539,7 +618,7 @@ function renderPlaces(){
 /* ---------- step 3 ---------- */
 function drawMap(){
   const rs = regions(); let leaders = "", spots = "";
-  if(!rs.some(r => r.id === S.sel)) S.sel = (rs.find(r => r.id === (S.mos && mosOf(S.mos).start)) || rs.find(r => r.v[S.view] && r.s === 3) || rs.find(r => r.v[S.view]) || rs[0] || {}).id;
+  if(!rs.some(r => r.id === S.sel)) S.sel = (rs.find(r => r.id === (S.mos && mosOf(S.mos) && mosOf(S.mos).start)) || rs.find(r => r.v[S.view] && r.s === 3) || rs.find(r => r.v[S.view]) || rs[0] || {}).id;
   if(S.sel && !byId(S.sel).v[S.view]) S.view = byId(S.sel).v.front ? "front" : "back";
   for(const r of rs){
     const p = r.v[S.view]; if(!p) continue;
@@ -565,13 +644,14 @@ function drawMap(){
 function renderSheet(){
   const r = S.sel && byId(S.sel), sh = $("sheet");
   if(!r){ sh.innerHTML = `<p class="muted">Pick a job on step 1 to light up the map.</p>`; return; }
-  const H = S.mos ? mosOf(S.mos).hazards : {};
-  const why = r.m ? `Your job reaches it through ${r.m.hazards.map(k => H[k].label.toLowerCase()).join(", ")}.` : "On the map because of when and where you served.";
+  const mm = S.mos && mosOf(S.mos); const H = mm ? mm.hazards : {};
+  const why = r.m ? `Your job reaches it through ${r.m.hazards.map(k => (H[k] ? H[k].label : k).toLowerCase()).join(", ")}.` : "On the map because of when and where you served.";
   let opts = r.m ? r.m.conds.map(([n,dc]) => ({key:`m|${r.id}|${n}`, name:n, kind:"mos", dc})) : [];
   for(const p of r.pres) opts = opts.concat(p.conds.map(n => ({key:`p|${p.id}|${n}`, name:n, kind:"pres", prog:p.id, why:p.why})));
   const seenP = new Set(); opts = opts.filter(o => { const k = plain(o.name).toLowerCase(); if(seenP.has(k)) return false; seenP.add(k); return true; });
   const LIM = 5, more = opts.length > LIM + 1 && !S.showAll, shown = more ? opts.slice(0, LIM) : opts;
   sh.innerHTML = `<div><h2>${esc(r.title)}</h2><p class="why">${esc(why)}${r.pres.length ? ` Blue items are presumed connected by your service dates and places.` : ""}</p></div>` +
+    (r.m && r.m.note ? `<p class="calm">${esc(r.m.note)}</p>` : "") +
     `<p class="fine muted">Which of these do you live with today?</p>` +
     shown.map(o => `<button type="button" class="opt" data-k="${esc(o.key)}" aria-pressed="${S.marked.has(o.key)}"><span>${esc(plain(o.name))}</span>${plain(o.name) !== o.name ? `<span class="term">${esc(o.name)}</span>` : ""}${o.kind === "pres" ? `<span class="term">Presumptive: ${esc(PROGS[o.prog].name)}</span>` : ""}</button>`).join("") +
     (more ? `<button type="button" class="link" id="show-more">Show ${opts.length - LIM} more</button>` : "");
@@ -662,7 +742,7 @@ function clearSave(){ try{ localStorage.removeItem(KEY); }catch(e){} }
 function loadSave(){ try{ const d = JSON.parse(localStorage.getItem(KEY) || "null"); return d && d.mos ? d : null; }catch(e){ return null; } }
 function restore(d){
   S.mos = d.mos; S.y1 = d.y1 || ""; S.y2 = d.y2 || ""; S.locs = new Set(d.locs || []); S.marked = new Map((d.marked || []).map(e => [e.key, e]));
-  $("y1").value = S.y1; $("y2").value = S.y2; pickJob(S.mos);
+  $("y1").value = S.y1; $("y2").value = S.y2; if(!mosOf(S.mos)){ clearSave(); $("resume").hidden = true; return; } pickJob(S.mos);
   $("resume").hidden = true; show(Math.min(Math.max(d.step || 1, 1), 5));
 }
 function offerResume(){
@@ -713,7 +793,7 @@ $("next").addEventListener("click", () => S.step === 6 ? send() : show(S.step + 
 $("back").addEventListener("click", () => show(S.step - 1));
 $("skip").addEventListener("click", () => show(S.step + 1));
 $("big-text").addEventListener("click", e => { const on = document.documentElement.classList.toggle("big"); e.currentTarget.setAttribute("aria-pressed", on); e.currentTarget.textContent = on ? "Normal text" : "Larger text"; });
-show(1); offerResume();
+show(1); loadData().then(ok => { if(ok) offerResume(); });
 </script>
 
 </body>

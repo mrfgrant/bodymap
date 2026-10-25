@@ -1,0 +1,297 @@
+branch,component,code,title,noise
+Air Force,Officer,10C0,Operations Commander,H
+Air Force,Officer,11AX,Airlift Pilot,H
+Air Force,Officer,11BX,Bomber Pilot,H
+Air Force,Officer,11EX,Test Pilot,H
+Air Force,Officer,11FX,Fighter Pilot,H
+Air Force,Officer,11GX,Generalist Pilot,H
+Air Force,Officer,11HX,Helicopter Pilot,H
+Air Force,Officer,11KX,Trainer Pilot,H
+Air Force,Officer,11RX,Reconnaissance/Surveillance/Electronic Warfare Pilot,H
+Air Force,Officer,11SX,Special Operations Pilot,H
+Air Force,Officer,11TX,Tanker Pilot,H
+Air Force,Officer,12AX,Airlift Navigator,H
+Air Force,Officer,12BX,Bomber Navigator,H
+Air Force,Officer,12EX,Test Navigator,H
+Air Force,Officer,12FX,Fighter Navigator,H
+Air Force,Officer,12GX,Generalist Navigator,H
+Air Force,Officer,12KX,Trainer Navigator,H
+Air Force,Officer,12RX,Reconnaissance/Surveillance/Electronic Warfare Navigator,H
+Air Force,Officer,12SX,Special Operations Navigator,H
+Air Force,Officer,12TX,Tanker Navigator,H
+Air Force,Officer,13AX,Astronaut,H
+Air Force,Officer,13BX,Air Battle Manager,H
+Air Force,Officer,13DX,Combat Control Officer,H
+Air Force,Officer,13MX,Airfield Operations Officer,H
+Air Force,Officer,13SX,Space and Missile Officer,M
+Air Force,Officer,14NX,Intelligence Officer,M
+Air Force,Officer,15WX,Weather Officer,L
+Air Force,Officer,16FX,Foreign Area Officer,L
+Air Force,Officer,16GX,Air Force Operations Staff Officer,M
+Air Force,Officer,16PX,International Politico-Military Affairs,M
+Air Force,Officer,16RX,Planning and Programming,L
+Air Force,Enlisted,1A0X1,In-Flight Refueling,H
+Air Force,Enlisted,1A1X1,Flight Engineer,H
+Air Force,Enlisted,1A2X1,Loadmaster,H
+Air Force,Enlisted,1A3X1,Airborne Communications Systems,H
+Air Force,Enlisted,1A4X1,Airborne Battle Management,H
+Air Force,Enlisted,1A5X1,Airborne Missions Systems,H
+Air Force,Enlisted,1C0X1,Airfield Management,H
+Air Force,Enlisted,1C0X2,Operations Resource Management,M
+Air Force,Enlisted,1C1X1,Air Traffic Control,H
+Air Force,Enlisted,1C2X1,Combat Control,H
+Air Force,Enlisted,1C3X1,Command Post,M
+Air Force,Enlisted,1C4X1,Tactical Air Command and Control,H
+Air Force,Enlisted,1C5X1,Aerospace Control and Warning Systems,H
+Air Force,Enlisted,1C6X1,Space Systems Operations,H
+Air Force,Enlisted,1N0X1,Intelligence Applications,L
+Air Force,Enlisted,1N1X1,Imagery Analysis,L
+Air Force,Enlisted,1N2X1,Signals Intelligence Production,L
+Air Force,Enlisted,1N3X1,Cryptologic Linguist (Germanic),L
+Air Force,Enlisted,1N3X2,Cryptologic Linguist (Romance),L
+Air Force,Enlisted,1N3X3,Cryptologic Linguist (Slavic),L
+Air Force,Enlisted,1N3X4,Cryptologic Linguist (Far East),L
+Air Force,Enlisted,1N3X5,Cryptologic Linguist (Mid-East),L
+Air Force,Enlisted,1N4X1,Signals Intelligence Analysis,L
+Air Force,Enlisted,1N5X1,Electronic Signals Intelligence Exploitation,H
+Air Force,Enlisted,1N6X1,Electronic System Security Assessment,M
+Air Force,Enlisted,1S0X1,Safety,H
+Air Force,Enlisted,1T0X1,Survival Evasion Resistance and Escape (SERE) Training,L
+Air Force,Enlisted,1T1X1,Aircrew Life Support,M
+Air Force,Enlisted,1T2X1,Pararescue,H
+Air Force,Enlisted,1W0X1,Weather,L
+Air Force,Officer,20C0,Logistics Commander,L
+Air Force,Officer,21LX,Logistician,L
+Air Force,Officer,21MX,Munitions and Missile Maintenance Officer,H
+Air Force,Officer,21BX,Aircraft Maintenance Officer,H
+Air Force,Officer,21RX,Logistics Readiness Officer,L
+Air Force,Enlisted,2A0X1,Avionics Test Station and Components,H
+Air Force,Enlisted,2A1X1,Avionics Sensors Maintenance,H
+Air Force,Enlisted,2A1X2,Avionics Guidance and Control Systems,H
+Air Force,Enlisted,2A1X3,Communication and Navigation Systems,H
+Air Force,Enlisted,2A1X4,Airborne Surveillance Radar Systems,H
+Air Force,Enlisted,2A1X7,Electronic Warfare Systems,H
+Air Force,Enlisted,2A3X1,F-15/F-111 Avionics Systems,H
+Air Force,Enlisted,2A3X2,F-16/F-117/CV-22 Avionic Systems,H
+Air Force,Enlisted,2A3X3,Tactical Aircraft Maintenance,H
+Air Force,Enlisted,2A4X1,Aircraft Guidance and Control,H
+Air Force,Enlisted,2A4X2,Aircraft Communication and Navigation Systems,H
+Air Force,Enlisted,2A5X1,Aerospace Maintenance (Crew Chief),H
+Air Force,Enlisted,2A5X2,Helicopter Maintenance,H
+Air Force,Enlisted,2A5X3,Bomber Avionics Systems,H
+Air Force,Enlisted,2A6X1,Aerospace Propulsion (Jet Engines),H
+Air Force,Enlisted,2A6X2,Aerospace Ground Equipment,H
+Air Force,Enlisted,2A6X3,Aircrew Egress Systems,H
+Air Force,Enlisted,2A6X4,Aircraft Fuel Systems,H
+Air Force,Enlisted,2A6X5,Aircraft Hydraulic Systems,H
+Air Force,Enlisted,2A6X6,Aircraft Electrical and Environmental Systems,H
+Air Force,Enlisted,2A7X1,Aircraft Metals Technology,H
+Air Force,Enlisted,2A7X2,Nondestructive Inspection,H
+Air Force,Enlisted,2A7X3,Aircraft Structural Maintenance,H
+Air Force,Enlisted,2A7X4,Survival Equipment,H
+Air Force,Enlisted,2E0X1,Ground Radar Systems,H
+Air Force,Enlisted,2E1X1,Satellite and Wideband Communications Equipment,M
+Air Force,Enlisted,2E1X2,Meteorological and Navigation Systems,L
+Air Force,Enlisted,2E1X3,Ground Radio Communications,M
+Air Force,Enlisted,2E1X4,Visual Imagery and Intrusion Detection Systems,L
+Air Force,Enlisted,2E2X1,Electronic Computer and Switching Systems,M
+Air Force,Enlisted,2E3X1,Secure Communication Systems,M
+Air Force,Enlisted,2E4X1,Space Systems,M
+Air Force,Enlisted,2E6X1,Communications Antenna Systems,L
+Air Force,Enlisted,2E6X2,Communication Cable Systems,L
+Air Force,Enlisted,2E6X3,Telephone Systems,L
+Air Force,Enlisted,2E8X1,Instrumentation and Telemetry,L
+Air Force,Enlisted,2F0X1,Fuels,M
+Air Force,Enlisted,2G0X1,Logistics Plans,L
+Air Force,Enlisted,2M0X1,Missile and Space Systems Electronic Maintenance,H
+Air Force,Enlisted,2M0X2,Missile and Space Systems Maintenance,H
+Air Force,Enlisted,2M0X3,Missile and Space Facilities,H
+Air Force,Enlisted,2P0X1,Precision Measurement Equipment Laboratory,M
+Air Force,Enlisted,2R0X1,Maintenance Data Systems Analyst,M
+Air Force,Enlisted,2R1X1,Maintenance Scheduling,M
+Air Force,Enlisted,2S0X1,Supply Management,L
+Air Force,Enlisted,2S0X2,Supply Systems Analyst,L
+Air Force,Enlisted,2T0X1,Traffic Management,L
+Air Force,Enlisted,2T1X1,Vehicle Operations,M
+Air Force,Enlisted,2T2X1,Air Transportation,L
+Air Force,Enlisted,2T3X1,Special Purpose Vehicle and Equipment Maintenance,M
+Air Force,Enlisted,2T3X2,Special Vehicle Maintenance,M
+Air Force,Enlisted,2T3X4,General Purpose Vehicle Mechanic,M
+Air Force,Enlisted,2T3X5,Vehicle Body Maintenance,M
+Air Force,Enlisted,2T3X7,Vehicle Maintenance Control and Analysis,L
+Air Force,Enlisted,2W0X1,Munitions Systems,H
+Air Force,Enlisted,2W1X1,Aircraft Armament Systems,H
+Air Force,Enlisted,2W2X1,Nuclear Weapons,H
+Air Force,Officer,30C0,Support Commander,L
+Air Force,Officer,31PX,Security Forces Officer,H
+Air Force,Officer,32EX,Civil Engineer Officer,L
+Air Force,Officer,33C0,Communications Commander,L
+Air Force,Officer,33SX,Communications and Information Officer,L
+Air Force,Officer,34MX,Services Officer,L
+Air Force,Officer,35BX,Band Officer,M
+Air Force,Officer,35PX,Public Affairs Officer,L
+Air Force,Officer,36MX,Mission Support Officer,L
+Air Force,Officer,36PX,Personnel Officer,L
+Air Force,Officer,38MX,Manpower Officer,L
+Air Force,Enlisted,3A0X1,Information Management,L
+Air Force,Enlisted,3C0X1,Communication-Computer Systems Operations,L
+Air Force,Enlisted,3C0X2,Communication-Computer Systems Programming,L
+Air Force,Enlisted,3C1X1,Radio Communications Systems,M
+Air Force,Enlisted,3C1X2,Electromagnetic Spectrum Management,L
+Air Force,Enlisted,3C2X1,Communication-Computer Systems Control,L
+Air Force,Enlisted,3C3X1,Communication-Computer Systems Planning and Implementation,L
+Air Force,Enlisted,3E0X1,Electrical,M
+Air Force,Enlisted,3E0X2,Electrical Power Production,M
+Air Force,Enlisted,3E1X1,Heating Ventilation AC and Refrigeration,M
+Air Force,Enlisted,3E2X1,Pavement and Construction Equipment,M
+Air Force,Enlisted,3E3X1,Structural,M
+Air Force,Enlisted,3E4X1,Utilities Systems,M
+Air Force,Enlisted,3E4X2,Liquid Fuel Systems Maintenance,M
+Air Force,Enlisted,3E4X3,Environmental,M
+Air Force,Enlisted,3E5X1,Engineering,M
+Air Force,Enlisted,3E6X1,Operations Management,M
+Air Force,Enlisted,3E7X1,Fire Protection,H
+Air Force,Enlisted,3E8X1,Explosive Ordnance Disposal,H
+Air Force,Enlisted,3E9X1,Readiness,L
+Air Force,Enlisted,3H0X1,Historian,L
+Air Force,Enlisted,3M0X1,Services,L
+Air Force,Enlisted,3N0X1,Public Affairs,L
+Air Force,Enlisted,3N0X2,Radio and Television Broadcasting,L
+Air Force,Enlisted,3N1X1,Regional Band,M
+Air Force,Enlisted,3N2X1,Premier Band,M
+Air Force,Enlisted,3P0X1,Security Forces,M
+Air Force,Enlisted,3S0X1,Personnel,L
+Air Force,Enlisted,3S0X2,Personnel Systems Management,L
+Air Force,Enlisted,3S1X1,Military Equal Opportunity,L
+Air Force,Enlisted,3S2X1,Education and Training,L
+Air Force,Enlisted,3V0X1,Visual Information,L
+Air Force,Enlisted,3V0X2,Still Photographic,L
+Air Force,Enlisted,3V0X3,Visual Information Production-Documentation,L
+Air Force,Officer,40C0,Medical Commander,L
+Air Force,Officer,41AX,Health Services Administrator,L
+Air Force,Officer,42BX,Physical Therapist,L
+Air Force,Officer,42EX,Optometrist,L
+Air Force,Officer,42FX,Podiatrist,L
+Air Force,Officer,42GX,Physician Assistant,L
+Air Force,Officer,42NX,Audiology/Speech Pathologist,L
+Air Force,Officer,42PX,Clinical Psychologist,L
+Air Force,Officer,42SX,Clinical Social Worker,L
+Air Force,Officer,42TX,Occupational Therapist,L
+Air Force,Officer,43AX,Aerospace Physiologist,L
+Air Force,Officer,43BX,Biomedical Scientist,L
+Air Force,Officer,43DX,Dietitian,L
+Air Force,Officer,43EX,Bioenvironmental Engineer,L
+Air Force,Officer,43HX,Public Health Officer,L
+Air Force,Officer,43MX,Medical Entomologist,L
+Air Force,Officer,43PX,Pharmacist,L
+Air Force,Officer,43TX,Biomedical Laboratory,L
+Air Force,Officer,43VX,Veterinary Clinician,L
+Air Force,Officer,43YX,Health Physicist,L
+Air Force,Officer,44AX,Chief Hospital/Clinic Services,L
+Air Force,Officer,44BX,Preventive Medicine Physician,L
+Air Force,Officer,44DX,Pathologist,L
+Air Force,Officer,44EX,Emergency Services Physician,L
+Air Force,Officer,44FX,Family Physician,L
+Air Force,Officer,44GX,General Practice Physician,L
+Air Force,Officer,44HX,Nuclear Medicine Physician,L
+Air Force,Officer,44JX,Clinical Geneticist,L
+Air Force,Officer,44KX,Pediatrician,L
+Air Force,Officer,44MX,Internist,L
+Air Force,Officer,44NX,Neurologist,L
+Air Force,Officer,44PX,Psychiatrist,L
+Air Force,Officer,44RX,Diagnostic Radiologist,L
+Air Force,Officer,44SX,Dermatologist,L
+Air Force,Officer,44TX,Radiotherapist,L
+Air Force,Officer,44UX,Occupational Medicine Physician,L
+Air Force,Officer,44YX,Critical Care Medicine Physician,L
+Air Force,Officer,44ZX,Allergist,L
+Air Force,Officer,45AX,Anesthesiologist,L
+Air Force,Officer,45BX,Orthopedic Surgeon,L
+Air Force,Officer,45EX,Ophthalmologist,L
+Air Force,Officer,45GX,OB/GYN,L
+Air Force,Officer,45NX,Otorhinolaryngologist,L
+Air Force,Officer,45PX,Physical Medicine Physician,L
+Air Force,Officer,45SX,Surgeon,L
+Air Force,Officer,45UX,Urologist,L
+Air Force,Officer,46AX,Nurse Administrator,L
+Air Force,Officer,46FX,Flight Nurse,M
+Air Force,Officer,46GX,Nurse-Midwife,L
+Air Force,Officer,46MX,Nurse Anesthetist,L
+Air Force,Officer,46NX,Clinical Nurse,L
+Air Force,Officer,46PX,Mental Health Nurse,L
+Air Force,Officer,46SX,Operating Room Nurse,L
+Air Force,Officer,47BX,Orthodontist,L
+Air Force,Officer,47DX,Oral and Maxillofacial Pathologist,L
+Air Force,Officer,47EX,Endodontist,L
+Air Force,Officer,47GX,Dentist,L
+Air Force,Officer,47HX,Periodontist,L
+Air Force,Officer,47KX,Pediatric Dentist,L
+Air Force,Officer,47PX,Prosthodontist,L
+Air Force,Officer,47SX,Oral Surgeon,L
+Air Force,Officer,48AX,Aerospace Medicine Specialist,M
+Air Force,Officer,48GX,General Medical Officer,L
+Air Force,Officer,48RX,Residency Trained Flight Surgeon,M
+Air Force,Officer,48VX,Pilot-Physician,L
+Air Force,Enlisted,4A0X1,Health Services Management,L
+Air Force,Enlisted,4A1X1,Medical Materiel,L
+Air Force,Enlisted,4A2X1,Biomedical Equipment,L
+Air Force,Enlisted,4B0X1,Bioenvironmental Engineering,L
+Air Force,Enlisted,4C0X1,Mental Health Service,L
+Air Force,Enlisted,4D0X1,Diet Therapy,L
+Air Force,Enlisted,4E0X1,Public Health,L
+Air Force,Enlisted,4F0X1,Aeromedical,H
+Air Force,Enlisted,4H0X1,Cardiopulmonary Laboratory,L
+Air Force,Enlisted,4J0X1,Occupational Therapy,L
+Air Force,Enlisted,4J0X2,Physical Therapy,L
+Air Force,Enlisted,4M0X1,Aerospace Physiology,M
+Air Force,Enlisted,4N0X1,Medical Service (Medic),L
+Air Force,Enlisted,4N1X1,Surgical Service,L
+Air Force,Enlisted,4P0X1,Pharmacy,L
+Air Force,Enlisted,4R0X1,Diagnostic Imaging,L
+Air Force,Enlisted,4T0X1,Medical Laboratory,L
+Air Force,Enlisted,4T0X2,Histopathology,L
+Air Force,Enlisted,4T0X3,Cytotechnology,L
+Air Force,Enlisted,4U0X1,Orthotic,L
+Air Force,Enlisted,4V0X1,Optometry,L
+Air Force,Enlisted,4Y0X1,Dental Assistant,L
+Air Force,Enlisted,4Y0X2,Dental Laboratory,L
+Air Force,Officer,51JX,Judge Advocate,L
+Air Force,Officer,52RX,Chaplain,L
+Air Force,Enlisted,5J0X1,Paralegal,L
+Air Force,Enlisted,5R0X1,Chaplain Service Support,L
+Air Force,Officer,60C0,Program Director,L
+Air Force,Officer,61SX,Scientist,L
+Air Force,Officer,62EX,Developmental Engineer,L
+Air Force,Officer,63AX,Acquisition Manager,L
+Air Force,Officer,64PX,Contracting Officer,L
+Air Force,Officer,65AX,Auditor,L
+Air Force,Officer,65FX,Financial Management Officer,L
+Air Force,Officer,65WX,Cost Analysis,L
+Air Force,Enlisted,6C0X1,Contracting,L
+Air Force,Enlisted,6F0X1,Financial Management and Comptroller,L
+Air Force,Officer,71SX,Special Investigator (OSI),L
+Air Force,Enlisted,7S0X1,Special Investigations (OSI),L
+Air Force,Officer,81T0,Instructor,L
+Air Force,Officer,83R0,Recruiting Service,L
+Air Force,Officer,85G0,USAF Honor Guard Officer,M
+Air Force,Officer,86M0,Operations Management,L
+Air Force,Officer,86P0,Command and Control,L
+Air Force,Officer,87G0,Inspector General,L
+Air Force,Officer,88A0,Aide-de-Camp,L
+Air Force,Enlisted,8A000,Flight Attendant,H
+Air Force,Enlisted,8B000,Military Training Instructor,L
+Air Force,Enlisted,8B100,Military Training Leader,L
+Air Force,Enlisted,8C000,Family Support Center,L
+Air Force,Enlisted,8D000,Linguist Debriefer/Interrogator,L
+Air Force,Enlisted,8F000,First Sergeant,L
+Air Force,Enlisted,8G000,USAF Honor Guard,M
+Air Force,Enlisted,8J000,Correctional Custody Supervisor,L
+Air Force,Enlisted,8M000,Postal Specialist,L
+Air Force,Enlisted,8P000,Courier,L
+Air Force,Enlisted,8R000,Recruiter,L
+Air Force,Enlisted,8S000,Missile Facility Manager,H
+Air Force,Enlisted,8S100,Sensor Operator,L
+Air Force,Enlisted,8T000,Professional Military Education Instructor,L
+Air Force,Officer,92T0,Pilot Trainee,H
+Air Force,Officer,92T1,Navigator Trainee,H
+Air Force,Enlisted,9T000,Basic Airman,L

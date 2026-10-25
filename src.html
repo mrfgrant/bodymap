@@ -1,0 +1,577 @@
+<title>Where Do I Start</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one question per screen, phone first. Progress at top, one column, Back/Next pinned to the bottom. The map is step 3 only. */
+:root{
+  --bg:#eceeeb; --surface:#f8f9f6; --ink:#1b251f; --muted:#55625a; --line:#cbd2cb;
+  --accent:#3d5a38; --on-accent:#f4f7f2; --soft:#dfe6dc;
+  --strong:#b5361d; --plausible:#d4850f; --weak:#587089; --pres:#1f5fa8;
+  --plate:#f8f9f8; --plate-ink:#1b251f; --p-strong:#b5361d; --p-plausible:#d98a0c; --p-weak:#3f5670; --p-white:#ffffff; --p-pres:#1c5db0;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --fs:17px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#131a15; --surface:#1b231d; --ink:#e5eae4; --muted:#9aa89d; --line:#33403a; --soft:#243029;
+    --accent:#a3c394; --on-accent:#131a15;
+    --strong:#ef6c4e; --plausible:#f1b243; --weak:#93a9bf; --pres:#86b6f0; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131a15; --surface:#1b231d; --ink:#e5eae4; --muted:#9aa89d; --line:#33403a; --soft:#243029;
+  --accent:#a3c394; --on-accent:#131a15;
+  --strong:#ef6c4e; --plausible:#f1b243; --weak:#93a9bf; --pres:#86b6f0; color-scheme:dark;
+}
+:root.big{--fs:20px}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:var(--fs);line-height:1.5}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05;text-transform:uppercase;letter-spacing:.01em}
+h1{font-size:clamp(30px,8vw,44px);font-weight:800}
+h2{font-size:1.35em;font-weight:800}
+p{margin:0}
+.muted{color:var(--muted)}
+.fine{font-size:.82em}
+.eyebrow{font-family:var(--mono);font-size:.72em;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+.app{max-width:560px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;padding-inline:18px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:3;padding-block:14px 10px;display:flex;flex-direction:column;gap:8px}
+.bar .row{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.82em;color:var(--muted)}
+.bar .row button{background:transparent;border:1.5px solid var(--line);color:var(--ink);border-radius:2px;padding:4px 10px;font-size:.9em}
+.track{height:5px;background:var(--soft);border-radius:3px;overflow:hidden}
+.track i{display:block;height:100%;background:var(--accent);transition:width .3s}
+@media (prefers-reduced-motion:reduce){.track i{transition:none}}
+
+main{flex:1;display:flex;flex-direction:column;gap:18px;padding-block:14px 110px}
+.step[hidden]{display:none}
+.step{display:flex;flex-direction:column;gap:18px}
+.lead{display:flex;flex-direction:column;gap:8px}
+.lead p{max-width:40ch}
+.calm{border-left:3px solid var(--accent);padding:2px 0 2px 12px;font-size:.9em}
+
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-family:var(--mono);font-size:.72em;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+input[type=text],input[type=number],input[type=email],input[type=tel],select{width:100%;font:inherit;font-size:1.05em;padding:12px 14px;background:var(--surface);color:var(--ink);border:1.5px solid var(--ink);border-radius:2px;min-height:48px}
+.sug{display:flex;flex-direction:column;border:1.5px solid var(--line);border-top:0;background:var(--surface)}
+.sug button{text-align:left;background:transparent;border:0;border-top:1px solid var(--line);padding:12px 14px;color:var(--ink);display:flex;gap:12px;align-items:baseline;min-height:48px}
+.sug button:hover,.sug button:focus-visible{background:var(--soft)}
+.sug .code{font-family:var(--mono);font-weight:500;min-width:4ch}
+.sug .sub{color:var(--muted);font-size:.85em}
+.sug .t{display:flex;flex-direction:column;gap:2px;min-width:0}
+.nz{display:inline-block;font-family:var(--mono);font-size:.7em;letter-spacing:.04em;text-transform:uppercase;padding:1px 6px;border-radius:2px;border:1px solid var(--line);margin-left:4px}
+.nz.nH{border-color:var(--strong);color:var(--strong)}.nz.nM{border-color:var(--plausible);color:var(--plausible)}.nz.nL{border-color:var(--weak);color:var(--weak)}
+.link{background:transparent;border:0;color:var(--accent);text-decoration:underline;padding:4px 0;text-align:left}
+.chosen{display:flex;gap:12px;align-items:center;background:var(--surface);border:1.5px solid var(--ink);border-radius:2px;padding:12px 14px}
+.chosen .code{font-family:var(--mono);font-weight:500;font-size:1.3em}
+.chosen .x{margin-left:auto}
+
+.cards{display:flex;flex-direction:column;gap:10px}
+.card{display:flex;gap:14px;align-items:center;background:var(--surface);border:1.5px solid var(--line);border-radius:2px;padding:14px 16px;text-align:left;color:var(--ink);min-height:56px;width:100%}
+.card .tick{width:24px;height:24px;border:2px solid var(--ink);border-radius:50%;flex:none;display:grid;place-items:center;font-size:14px;color:transparent}
+.card[aria-pressed="true"]{border-color:var(--accent);background:var(--soft)}
+.card[aria-pressed="true"] .tick{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.card .t{display:flex;flex-direction:column;gap:2px}
+.card .sub{color:var(--muted);font-size:.85em}
+.years{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* map */
+.plate{position:relative;background:var(--plate);border:1px solid var(--line);border-radius:2px}
+svg.body{width:100%;height:auto;display:block}
+.flip{position:absolute;top:10px;right:10px;background:var(--surface);color:var(--ink);border:1.5px solid var(--ink);border-radius:2px;padding:6px 12px;font-size:.85em;font-weight:600}
+.leader{stroke:var(--plate-ink);stroke-opacity:.45;stroke-width:2.5;pointer-events:none}
+.region{cursor:pointer}
+.region text{font-family:var(--body);font-size:44px;font-weight:500;fill:var(--plate-ink)}
+.region:focus{outline:none}
+.region .hit{fill:transparent}
+.region .spot{transform-box:fill-box;transform-origin:center;transition:transform .15s}
+.region.s3 .spot{fill:var(--p-strong);stroke:var(--p-white);stroke-width:5}
+.region.s2 .spot{fill:var(--p-white);fill-opacity:.55;stroke:var(--p-plausible);stroke-width:11}
+.region.s1 .spot{fill:var(--p-white);fill-opacity:.6;stroke:var(--p-weak);stroke-width:5;stroke-dasharray:11 8}
+.region.s0 .spot{fill:var(--p-pres);stroke:var(--p-white);stroke-width:5}
+.region .pring{fill:none;stroke:var(--p-pres);stroke-width:6;display:none}
+.region.pz .pring{display:inline}
+.region .pulse{fill:none;stroke-width:6;opacity:0;transform-box:fill-box;transform-origin:center}
+.region.s3 .pulse{stroke:var(--p-strong);animation:pulse 1.7s ease-out infinite}
+.region.s2 .pulse{stroke:var(--p-plausible);animation:pulse 2.8s ease-out infinite}
+.region.s0 .pulse{stroke:var(--p-pres);animation:pulse 2.8s ease-out infinite}
+.region .ring{fill:none;stroke:var(--plate-ink);stroke-width:5;opacity:0}
+.region.sel .ring{opacity:1}
+.region.sel .spot{transform:scale(1.15)}
+.region .done{fill:var(--p-white);stroke:var(--plate-ink);stroke-width:4;display:none}
+.region.has .done{display:inline}
+.region.has .donet{display:inline;font-size:30px;font-weight:700;fill:var(--plate-ink);pointer-events:none}
+.region .donet{display:none}
+@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.1);opacity:0}}
+@media (prefers-reduced-motion:reduce){.region .pulse{animation:none}.region .spot{transition:none}}
+.sheet{background:var(--surface);border:1.5px solid var(--ink);border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.sheet .why{font-size:.9em;color:var(--muted)}
+.opt{display:flex;flex-direction:column;gap:2px;background:var(--bg);border:1.5px solid var(--line);border-radius:2px;padding:12px 14px;text-align:left;color:var(--ink);min-height:52px;width:100%}
+.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--soft)}
+.opt .term{color:var(--muted);font-size:.8em}
+.opt[aria-pressed="true"]::after{content:"Added";font-family:var(--mono);font-size:.7em;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-top:2px}
+.tally{font-size:.9em}
+
+/* diagnosis + secondaries */
+.one{background:var(--surface);border:1.5px solid var(--ink);border-radius:2px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.one .n{font-family:var(--mono);font-size:.72em;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.one .name{font-size:1.25em;font-weight:600;line-height:1.25}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.big{min-height:60px;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:2px;padding:10px;font-weight:600}
+.big[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.follow{display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:10px}
+.dots{display:flex;gap:6px;justify-content:center}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.dots i.on{background:var(--ink)}
+.dots i.ok{background:var(--accent)}
+.pager{display:flex;justify-content:space-between;gap:10px}
+.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink);border-radius:2px;padding:10px 16px;font-weight:600;min-height:48px}
+
+/* summary */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{background:var(--surface);border:1.5px solid var(--line);border-top-width:4px;border-radius:2px;padding:12px;display:flex;flex-direction:column;gap:2px}
+.tile b{font-family:var(--display);font-size:2.2em;line-height:1;font-weight:800}
+.tile span{font-size:.78em;color:var(--muted);line-height:1.3}
+.tile.a{border-top-color:var(--accent)}.tile.b{border-top-color:var(--plausible)}.tile.c{border-top-color:var(--weak)}
+.sum{display:flex;flex-direction:column}
+.sum .r{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-size:.95em}
+.sum .r:last-child{border-bottom:1px solid var(--line)}
+.sum .st{font-family:var(--mono);font-size:.72em;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;padding-top:4px}
+.st.a{color:var(--accent)}.st.b{color:var(--plausible)}.st.c{color:var(--weak)}
+.consent{display:flex;flex-direction:column;gap:10px;font-size:.92em}
+.consent label{display:flex;gap:10px;align-items:flex-start}
+.consent input{width:20px;height:20px;margin-top:3px;accent-color:var(--accent);flex:none}
+.sent{background:var(--soft);border:1.5px solid var(--accent);border-radius:2px;padding:16px;display:flex;flex-direction:column;gap:8px}
+
+.banner{background:var(--soft);border:1.5px solid var(--accent);border-radius:2px;padding:12px 14px;display:flex;gap:12px;align-items:center;font-size:.9em}
+.banner .grow{flex:1}
+.banner button{min-height:40px}
+/* footer nav */
+.nav{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--line);padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px));z-index:3}
+.nav .in{max-width:560px;margin:0 auto;display:flex;gap:10px;align-items:center}
+.btn{background:var(--accent);color:var(--on-accent);border:0;border-radius:2px;padding:12px 20px;font-weight:600;min-height:52px;flex:1;font-size:1.05em}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.nav .ghost{flex:0 0 auto}
+.nav .skip{background:transparent;border:0;color:var(--muted);text-decoration:underline;padding:8px 4px;flex:0 0 auto}
+</style>
+
+<div class="app">
+  <div class="bar">
+    <div class="row"><span id="prog-label">Step 1 of 6</span><button type="button" id="big-text" aria-pressed="false">Larger text</button></div>
+    <div class="track" aria-hidden="true"><i id="prog-fill" style="width:16%"></i></div>
+  </div>
+
+  <main>
+    <div class="banner" id="install" hidden></div>
+    <div class="one" id="resume" hidden></div>
+    <!-- 1 Job -->
+    <section class="step" id="s1">
+      <div class="lead"><span class="eyebrow">Nexus247.ai · Where do I start</span><h1>What was your job in the service?</h1><p class="muted">Type the code or just what you did. "Cook" works.</p></div>
+      <div class="field"><label for="job">Job or MOS</label><input type="text" id="job" autocomplete="off" placeholder="Loading the job list..." disabled><div class="sug" id="job-sug" hidden></div></div>
+      <div id="job-chosen" hidden></div>
+      <button type="button" class="link" id="job-help">I don't remember my code</button>
+      <div id="job-list" class="cards" hidden></div>
+      <p class="calm">You can't get this wrong. We only use it to guess what your body went through.</p>
+    </section>
+
+    <!-- 2 When / where -->
+    <section class="step" id="s2" hidden>
+      <div class="lead"><h1>When did you serve?</h1><p class="muted">Years are enough. Then tap any place you were, even briefly.</p></div>
+      <div class="years">
+        <div class="field"><label for="y1">From year</label><input type="number" id="y1" inputmode="numeric" min="1940" max="2026" placeholder="1989"></div>
+        <div class="field"><label for="y2">To year</label><input type="number" id="y2" inputmode="numeric" min="1940" max="2026" placeholder="1993"></div>
+      </div>
+      <div class="field"><label>Were you ever in any of these?</label><div class="cards" id="places"><p class="muted fine">Enter your years first. We only show places that matter for those years.</p></div></div>
+      <p class="calm" id="era-note">Some conditions are presumed service connected by dates and places alone. That's often the easiest path when records are thin.</p>
+    </section>
+
+    <!-- 3 Map -->
+    <section class="step" id="s3" hidden>
+      <div class="lead"><h1>Where does it bother you?</h1><p class="muted" id="map-sub">Tap a dot. Add anything you live with today.</p></div>
+      <div class="plate"><svg class="body" id="body-svg" viewBox="-100 0 1330 1999" role="group" aria-label="Body map. Tap a body area."></svg><button type="button" class="flip" id="flip">Show back</button></div>
+      <div class="sheet" id="sheet"></div>
+      <p class="tally" id="tally"></p>
+      <p class="calm">Tap anything that bothers you. Nothing here is a claim yet.</p>
+    </section>
+
+    <!-- 4 Diagnosis -->
+    <section class="step" id="s4" hidden>
+      <div class="lead"><h1>Has a doctor seen you for this?</h1><p class="muted">One at a time. "Not yet" is a normal answer. It just tells us your first step.</p></div>
+      <div id="dx-wrap"></div>
+    </section>
+
+    <!-- 5 Secondaries -->
+    <section class="step" id="s5" hidden>
+      <div class="lead"><h1>Do you also have...</h1><p class="muted">Some problems cause others. Answer only for what's true today.</p></div>
+      <div id="sec-wrap"></div>
+    </section>
+
+    <!-- 6 Summary -->
+    <section class="step" id="s6" hidden>
+      <div class="lead"><h1>Here's what you have</h1><p class="muted" id="sum-lead"></p></div>
+      <div class="tiles" id="tiles"></div>
+      <div class="sum" id="sum"></div>
+      <div id="submit-box" class="one">
+        <div class="n">Have Forrest review it</div>
+        <p class="fine muted">Nothing has been saved yet. Press the button at the bottom and your answers go to a reviewer, and a copy of your draft statement goes to you.</p>
+        <div class="field"><label for="c-name">Name</label><input type="text" id="c-name" autocomplete="name"></div>
+        <div class="grid2"><div class="field"><label for="c-email">Email</label><input type="email" id="c-email" autocomplete="email"></div><div class="field"><label for="c-phone">Phone</label><input type="tel" id="c-phone" autocomplete="tel"></div></div>
+        <div class="field"><label for="c-disch">Discharge</label><select id="c-disch"><option value="">Choose one</option><option>Honorable</option><option>General under honorable conditions</option><option>Other than honorable</option><option>Bad conduct or dishonorable</option><option>Not sure</option></select></div>
+        <div class="consent">
+          <label><input type="checkbox" id="c-ok1"><span>A Nexus247 reviewer may read my answers and contact me.</span></label>
+          <label><input type="checkbox" id="c-ok2"><span>I understand this is a review and education service, not legal representation, and no one here files a claim for me.</span></label>
+          <label><input type="checkbox" id="c-ok3"><span>Keep my answers for 12 months, then delete them.</span></label>
+        </div>
+      </div>
+      <div class="sent" id="sent" hidden></div>
+    </section>
+  </main>
+
+  <div class="nav"><div class="in">
+    <button type="button" class="ghost" id="back">Back</button>
+    <button type="button" class="skip" id="skip" hidden>Skip</button>
+    <button type="button" class="btn" id="next">Next</button>
+  </div></div>
+</div>
+
+<script>
+__DATA__
+/* ---------- plain words for the veteran view ---------- */
+const PLAIN = {
+  "Tinnitus":"Ringing in the ears","Hearing loss":"Trouble hearing","Cervical strain":"Neck pain or stiffness","Degenerative arthritis of the cervical spine":"Neck arthritis","Cervical radiculopathy, secondary to the neck":"Pain or numbness running down the arm",
+  "Shoulder strain or rotator cuff tendinopathy":"Shoulder pain or weakness","Shoulder impingement":"Pinching pain when raising the arm","AC joint or collarbone injury":"Pain at the top of the shoulder","Asthma":"Asthma or wheezing","Chronic rhinitis":"Constant runny or stuffy nose","Chronic sinusitis":"Repeated sinus infections",
+  "Thoracic strain":"Mid-back pain","Lumbosacral strain":"Low back pain","Degenerative arthritis of the spine":"Back arthritis","Intervertebral disc syndrome":"Disc problems in the back","Sciatica, secondary to the back":"Pain shooting down the leg","Hernia":"Hernia (bulge in the groin or belly)",
+  "Hip strain or limited motion":"Hip pain or stiffness","Trochanteric bursitis":"Pain on the outside of the hip","Degenerative arthritis of the hip":"Hip arthritis","Lateral epicondylitis (tennis elbow)":"Elbow pain (tennis elbow)","Burn scars":"Burn scars","Laceration scars":"Cut scars","Contact dermatitis or eczema":"Skin rash that keeps coming back",
+  "Carpal tunnel syndrome":"Numb or tingling hands","Wrist tendinitis or De Quervain's":"Wrist pain with gripping","Finger injury residuals from cuts":"Finger damage from old cuts","Knee strain or patellofemoral pain":"Knee pain","Knee instability":"Knee gives out","Degenerative arthritis of the knee":"Knee arthritis",
+  "Varicose veins":"Bulging leg veins","Shin splints":"Shin pain","Stress fracture residuals":"Old stress fracture","Plantar fasciitis":"Heel or arch pain","Flatfoot, acquired or aggravated":"Flat feet that hurt","Ankle sprain residuals":"Weak or painful ankle",
+  "Traumatic brain injury residuals":"Lasting effects of a head injury","Migraine or post-traumatic headaches":"Bad headaches","PTSD":"PTSD or trauma symptoms"
+};
+const plain = n => PLAIN[n] || n;
+/* ---------- MOS lookup data: every job code across all branches, loaded from data/mos.json ---------- */
+const DATA = {jobs:[], profiles:{}, byKey:{}, ready:false};
+const EXTRA_JOBS = [{k:"Marine Corps|Enlisted|0352", code:"0352", branch:"Marine Corps", comp:"Enlisted", title:"Anti-Tank Missileman", noise:"H", noiseSrc:"va", profile:"infantry", kw:"anti tank antitank tow javelin missile marine infantry gunner"}];
+const OVERRIDES = {"Army|Enlisted|94B|legacy":"94B", "Army|Enlisted|92G":"94B", "Marine Corps|Enlisted|0352":"0352"};
+const NOISE_WORD = {H:"Highly Probable", M:"Moderate", L:"Low"};
+const BRANCHES = ["Army","Marine Corps","Navy","Air Force","Coast Guard"];
+async function loadData(){
+  try{
+    const [m, p] = await Promise.all([fetch("data/mos.json").then(r => r.json()), fetch("data/profiles.json").then(r => r.json())]);
+    DATA.jobs = m.jobs.concat(EXTRA_JOBS); DATA.profiles = p;
+    for(const j of DATA.jobs) DATA.byKey[j.k] = j;
+    DATA.ready = true;
+  }catch(e){ DATA.ready = false; $("job").placeholder = "Job list could not load. Check your connection and reopen."; }
+  $("job").disabled = !DATA.ready; if(DATA.ready) $("job").placeholder = "94B, cook, 2A5X1, truck driver...";
+  return DATA.ready;
+}
+const LOCWIN = {vietnam:[1962,1975],thailand:[1962,1976],dmz:[1967,1971],aoother:[1962,1980],gulf:[1990,2026],somalia:[1990,2026],afghan:[2001,2026],post911:[2001,2026],isrtur:[1990,2026],lejeune:[1953,1987]};
+
+/* ---------- state ---------- */
+const S = {step:1, mos:null, y1:"", y2:"", locs:new Set(), view:"front", sel:null, marked:new Map(), dxi:0, seci:0, secQ:[], sent:false};
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const mosCache = {};
+function mosOf(k){
+  if(mosCache[k]) return mosCache[k];
+  let j = DATA.byKey[k];
+  if(!j && k && k.startsWith("family|")){ const [, br, pid] = k.split("|"); j = {k, code:"", branch:br, comp:"", title:(DATA.profiles[pid] || {}).name || "General service", noise:null, profile:pid, family:true}; }
+  if(!j) return null;
+  const ov = OVERRIDES[k] && MOS[OVERRIDES[k]];
+  let m;
+  if(ov){ m = {...ov, name:ov.name, regions:{...ov.regions}, hazards:{...ov.hazards}}; }
+  else {
+    const p = DATA.profiles[j.profile] || DATA.profiles.generic;
+    m = {name:j.title, branch:j.branch, blurb:p.blurb, start:p.start, hazards:{...p.hazards}, regions:{}};
+    for(const [id, r] of Object.entries(p.regions)) m.regions[id] = {...r, hazards:[...r.hazards]};
+    /* the VA noise listing decides the ears, whatever the job family says */
+    const ears = m.regions.ears ? {...m.regions.ears, hazards:[...m.regions.ears.hazards]} : {s:1, hazards:["range"], conds:[["Tinnitus","DC 6260"],["Hearing loss","DC 6100"]], evidence:["DD-214 showing the job","Statement on when the ringing or hearing trouble began","Current audiogram"]};
+    if(j.noise === "H"){ ears.s = 3; ears.note = "VA's Duty MOS Noise Exposure Listing rates this job Highly Probable, so hazardous noise exposure is conceded from the job itself. This is usually the strongest link on the map."; }
+    else if(j.noise === "M"){ ears.s = 2; ears.note = "VA's noise listing rates this job Moderate. VA concedes the exposure, but a statement on what was loud and how often helps."; }
+    else if(j.noise === "L"){ ears.s = 1; ears.note = "VA's noise listing rates this job Low, so the job alone will not carry a hearing claim. Look for other exposure: ranges, generators, a loud unit, or a different duty than the title suggests."; }
+    else { ears.s = Math.min(ears.s, 2); ears.note = "Noise rating depends on the exact job code. Add it later for a firmer answer."; }
+    if(!ears.hazards.includes("range")) ears.hazards.push("range");
+    m.regions.ears = ears;
+  }
+  m.code = j.code; m.branch = j.branch; m.comp = j.comp; m.noise = j.noise; m.noiseSrc = j.noiseSrc; m.legacy = !!j.legacy; m.successor = j.successor; m.successorTitle = j.successorTitle; m.family = !!j.family; m.profile = j.profile;
+  m.blurb = [j.branch, j.comp, j.legacy ? "older code, now " + j.successor : null, j.noise ? "noise: " + NOISE_WORD[j.noise] : null].filter(Boolean).join(" · ");
+  mosCache[k] = m; return m;
+}
+const mosCode = () => S.mos;
+
+/* programs */
+function matched(){
+  const f = +S.y1, t = +S.y2; if(!f || !t || f > t) return [];
+  const on = id => S.locs.has(id), ov = (a,b) => f <= b && t >= a, out = [];
+  const ao = []; if(on("vietnam") && ov(1962,1975)) ao.push("Vietnam"); if(on("thailand") && ov(1962,1976)) ao.push("Thailand"); if(on("dmz") && ov(1967,1971)) ao.push("the Korean DMZ"); if(on("aoother") && ov(1962,1980)) ao.push("Laos, Cambodia, Guam, American Samoa or Johnston Atoll");
+  if(ao.length) out.push({id:"ao", why:"Service in " + ao.join(" and ") + " in the Agent Orange years."});
+  const b = [...(t >= 1990 ? ["gulf","somalia"].filter(on) : []), ...(t >= 2001 ? ["afghan","post911"].filter(on) : [])];
+  if(b.length) out.push({id:"burn", why:"Service in " + b.map(i => LOCS.find(l => l.id === i).short).join(" and ") + " in the burn pit years."});
+  const g = ["gulf","afghan","isrtur"].filter(on); if(g.length && t >= 1990) out.push({id:"gulf", why:"Service in the Gulf War theater on or after August 2, 1990."});
+  if(on("lejeune") && ov(1953,1987)) out.push({id:"lej", why:"Time at Camp Lejeune or MCAS New River between 1953 and 1987."});
+  return out;
+}
+function regions(){
+  const mm = S.mos && mosOf(S.mos); const m = mm ? mm.regions : {}, pr = matched();
+  return AREAS.map(a => { const r = m[a.id] || null, pres = pr.filter(p => PROGS[p.id].conds[a.id]).map(p => ({...p, conds:PROGS[p.id].conds[a.id]}));
+    return (r || pres.length) ? {...a, m:r, pres, s:r ? r.s : 0} : null; }).filter(Boolean);
+}
+const byId = id => regions().find(r => r.id === id);
+
+/* ---------- step 1: MOS lookup ---------- */
+function searchJobs(q){
+  q = q.trim().toLowerCase(); if(!q) return [];
+  const toks = q.split(/\s+/).filter(Boolean), qc = q.replace(/[\s-]/g, "").toUpperCase();
+  const out = [];
+  for(const j of DATA.jobs){
+    const code = j.code.toUpperCase(); let sc = 0;
+    if(code && code === qc) sc = 100;
+    else if(code && qc.length >= 2 && code.startsWith(qc)) sc = 60 - (code.length - qc.length);
+    else if(j.branch === "Marine Corps" && /^\d{4}$/.test(qc) && code.endsWith("XX") && code.slice(0,2) === qc.slice(0,2)) sc = 55;
+    else if(code && qc.length >= 3 && code.includes(qc)) sc = 30;
+    if(!sc){
+      const tw = j.title.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean), kw = (j.kw || "").split(" ");
+      const hit = (words, tk) => tk.length <= 2 ? words.includes(tk) : words.some(w => w.startsWith(tk));
+      let all = true, pts = 0;
+      for(const tk of toks){
+        if(hit(tw, tk)) pts += tw[0].startsWith(tk) ? 40 : 30; else if(hit(kw, tk)) pts += 18; else { all = false; break; }
+      }
+      if(all) sc = pts;
+    }
+    if(sc){ if(j.legacy) sc -= 3; if(j.comp === "Officer" || j.comp === "Warrant") sc -= 5; sc += ({"Army":3,"Marine Corps":2,"Navy":1}[j.branch] || 0); out.push([sc, j]); }
+  }
+  out.sort((a,b) => b[0] - a[0] || a[1].code.localeCompare(b[1].code));
+  return out.slice(0, 8).map(x => x[1]);
+}
+function jobRow(j){
+  const noise = j.noise ? `<span class="nz n${j.noise}">${NOISE_WORD[j.noise]} noise</span>` : "";
+  const sub = [j.branch, j.comp, j.legacy ? "older code, now " + j.successor : null].filter(Boolean).join(" · ");
+  return `<button type="button" data-k="${esc(j.k)}"><span class="code">${esc(j.code)}</span><span class="t"><span>${esc(j.title)}</span><span class="sub">${esc(sub)} ${noise}</span></span></button>`;
+}
+function jobSearch(q){
+  const box = $("job-sug");
+  if(!q.trim()){ box.hidden = true; return; }
+  if(!DATA.ready){ box.innerHTML = `<button type="button" disabled><span class="sub">Loading the job list...</span></button>`; box.hidden = false; return; }
+  const hits = searchJobs(q);
+  box.innerHTML = hits.length ? hits.map(jobRow).join("")
+    : `<button type="button" disabled><span class="sub">No match. Try the code from your DD-214 (block 11), or plain words like "cook" or "truck driver". Or tap "I don't remember my code".</span></button>`;
+  box.hidden = false;
+  box.querySelectorAll("button[data-k]").forEach(b => b.addEventListener("click", () => pickJob(b.dataset.k)));
+}
+function pickJob(k){
+  const m = mosOf(k); if(!m) return;
+  S.mos = k;
+  $("job-chosen").innerHTML = `<div class="chosen"><span class="code">${esc(m.code || "?")}</span><span>${esc(m.name)}<br><span class="muted fine">${esc(m.blurb)}</span>${m.legacy && m.successorTitle ? `<br><span class="muted fine">Today that job is ${esc(m.successor)} ${esc(m.successorTitle)}.</span>` : ""}</span><button type="button" class="link x" id="job-clear">Change</button></div>`;
+  $("job-chosen").hidden = false; $("job").parentNode.hidden = true; $("job-sug").hidden = true; $("job-list").hidden = true; $("job-help").hidden = true;
+  $("job-clear").addEventListener("click", () => { S.mos = null; S.sel = null; $("job-chosen").hidden = true; $("job").parentNode.hidden = false; $("job-help").hidden = false; $("job").value = ""; $("job").focus(); nav(); });
+  nav();
+}
+$("job").addEventListener("input", e => jobSearch(e.target.value));
+$("job-help").addEventListener("click", () => {
+  const l = $("job-list"); l.hidden = !l.hidden; if(l.hidden) return;
+  const fam = Object.entries(DATA.profiles).filter(([id]) => id !== "generic").sort((a,b) => a[1].name.localeCompare(b[1].name));
+  l.innerHTML = `<p class="muted fine">No problem. Pick your branch, then the kind of work. Your DD-214 has the exact code in block 11 if you find it later.</p>` +
+    `<div class="field"><label>Branch</label><div class="grid2" id="fam-branch">${BRANCHES.map(b => `<button type="button" class="big" data-b="${b}" aria-pressed="false">${b}</button>`).join("")}</div></div>` +
+    `<div class="field" id="fam-wrap" hidden><label>Kind of work</label><div class="cards" id="fam-list">${fam.map(([id,p]) => `<button type="button" class="card" data-p="${id}"><span class="tick">✓</span><span class="t"><span>${esc(p.name)}</span><span class="sub">${esc(p.blurb)}</span></span></button>`).join("")}</div></div>`;
+  let br = null;
+  l.querySelectorAll("#fam-branch .big").forEach(b => b.addEventListener("click", () => { br = b.dataset.b; l.querySelectorAll("#fam-branch .big").forEach(x => x.setAttribute("aria-pressed", x === b)); $("fam-wrap").hidden = false; $("fam-wrap").scrollIntoView({behavior:"smooth", block:"nearest"}); }));
+  l.querySelectorAll("#fam-list .card").forEach(b => b.addEventListener("click", () => { if(!br){ $("fam-branch").scrollIntoView(); return; } pickJob(`family|${br}|${b.dataset.p}`); }));
+});
+
+/* ---------- step 2 ---------- */
+function renderPlaces(){
+  const f = +S.y1, t = +S.y2, box = $("places");
+  if(!f || !t || f > t || f < 1940){ box.innerHTML = `<p class="muted fine">Enter your years first. We only show places that matter for those years.</p>`; return; }
+  const show = LOCS.filter(l => { const [a,b] = LOCWIN[l.id]; return f <= b && t >= a; });
+  for(const id of [...S.locs]) if(!show.some(l => l.id === id)) S.locs.delete(id);
+  box.innerHTML = show.length ? show.map(l => `<button type="button" class="card" data-l="${l.id}" aria-pressed="${S.locs.has(l.id)}"><span class="tick">✓</span><span class="t"><span>${esc(l.label)}</span></span></button>`).join("") + `<button type="button" class="card" id="none-place" aria-pressed="${S.locs.size === 0 && S.noneTouched ? "true" : "false"}"><span class="tick">✓</span><span class="t"><span>None of these</span><span class="sub">That's fine. Your job still tells us a lot.</span></span></button>`
+    : `<p class="muted fine">No special places apply to those years. Your job still tells us a lot. Tap Next.</p>`;
+  box.querySelectorAll("[data-l]").forEach(b => b.addEventListener("click", () => { S.noneTouched = false; S.locs.has(b.dataset.l) ? S.locs.delete(b.dataset.l) : S.locs.add(b.dataset.l); renderPlaces(); }));
+  const n = $("none-place"); if(n) n.addEventListener("click", () => { S.locs.clear(); S.noneTouched = true; renderPlaces(); });
+  const pr = matched();
+  $("era-note").textContent = pr.length ? "Good news: your dates and places match " + pr.map(p => PROGS[p.id].name).join(" and ") + ". Some conditions there are presumed service connected. We'll show them as blue dots." : "Some conditions are presumed service connected by dates and places alone. That's often the easiest path when records are thin.";
+}
+["y1","y2"].forEach(id => $(id).addEventListener("input", e => { S[id] = e.target.value; renderPlaces(); }));
+
+/* ---------- step 3 ---------- */
+function drawMap(){
+  const rs = regions(); let leaders = "", spots = "";
+  if(!rs.some(r => r.id === S.sel)) S.sel = (rs.find(r => r.id === (S.mos && mosOf(S.mos) && mosOf(S.mos).start)) || rs.find(r => r.v[S.view] && r.s === 3) || rs.find(r => r.v[S.view]) || rs[0] || {}).id;
+  if(S.sel && !byId(S.sel).v[S.view]) S.view = byId(S.sel).v.front ? "front" : "back";
+  for(const r of rs){
+    const p = r.v[S.view]; if(!p) continue;
+    const ys = p.spots[0][1]; let edge = p.side === "R" ? -1e9 : 1e9;
+    for(const [x,,rx] of p.spots) edge = p.side === "R" ? Math.max(edge, x + rx + 12) : Math.min(edge, x - rx - 12);
+    leaders += `<line class="leader" x1="${edge}" y1="${ys}" x2="${p.side === "R" ? 962 : 158}" y2="${ys}"/>`;
+    const has = [...S.marked.values()].some(e => e.area === r.id);
+    const shapes = p.spots.map(([x,y,rx,ry]) => { const b = ry || rx;
+      return `<ellipse class="hit" cx="${x}" cy="${y}" rx="${Math.max(rx,52)}" ry="${Math.max(b,52)}"/><ellipse class="pulse" cx="${x}" cy="${y}" rx="${rx}" ry="${b}"/><ellipse class="pring" cx="${x}" cy="${y}" rx="${rx+8}" ry="${b+8}"/><ellipse class="spot" cx="${x}" cy="${y}" rx="${rx}" ry="${b}"/><ellipse class="ring" cx="${x}" cy="${y}" rx="${rx+17}" ry="${b+17}"/>`; }).join("");
+    const [fx,fy,frx] = p.spots[0];
+    spots += `<g class="region s${r.s}${r.pres.length ? " pz" : ""}${has ? " has" : ""}" data-id="${r.id}" role="button" tabindex="0" aria-pressed="${r.id === S.sel}" aria-label="${esc(r.title)}${has ? ", something added" : ""}">${shapes}<circle class="done" cx="${fx + frx + 6}" cy="${fy - (p.spots[0][3] || frx) - 6}" r="20"/><text class="donet" x="${fx + frx + 6}" y="${fy - (p.spots[0][3] || frx) + 5}" text-anchor="middle">✓</text><text x="${p.side === "R" ? 976 : 144}" y="${ys+15}" text-anchor="${p.side === "R" ? "start" : "end"}">${esc(r.label)}</text></g>`;
+  }
+  const svg = $("body-svg");
+  svg.innerHTML = `<defs><filter id="soft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="26"/></filter><mask id="fade" maskUnits="userSpaceOnUse" x="0" y="0" width="1116" height="1999"><rect x="50" y="50" width="1016" height="1899" fill="#fff" filter="url(#soft)"/></mask></defs><image href="${IMG[S.view]}" x="0" y="0" width="1116" height="1999" mask="url(#fade)" preserveAspectRatio="none"/>` + leaders + spots;
+  svg.querySelectorAll(".region").forEach(g => { g.classList.toggle("sel", g.dataset.id === S.sel);
+    g.addEventListener("click", () => { S.sel = g.dataset.id; S.showAll = false; drawMap(); $("sheet").scrollIntoView({behavior:"smooth", block:"nearest"}); });
+    g.addEventListener("keydown", e => { if(e.key === "Enter" || e.key === " "){ e.preventDefault(); g.click(); } }); });
+  $("flip").textContent = S.view === "front" ? "Show back" : "Show front";
+  const backOnly = rs.filter(r => !r.v.front).map(r => r.label.toLowerCase());
+  $("map-sub").textContent = S.view === "front" && backOnly.length ? `Tap a dot. ${backOnly.join(", ")} are on the back.` : "Tap a dot. Add anything you live with today.";
+  renderSheet(); renderTally();
+}
+function renderSheet(){
+  const r = S.sel && byId(S.sel), sh = $("sheet");
+  if(!r){ sh.innerHTML = `<p class="muted">Pick a job on step 1 to light up the map.</p>`; return; }
+  const mm = S.mos && mosOf(S.mos); const H = mm ? mm.hazards : {};
+  const why = r.m ? `Your job reaches it through ${r.m.hazards.map(k => (H[k] ? H[k].label : k).toLowerCase()).join(", ")}.` : "On the map because of when and where you served.";
+  let opts = r.m ? r.m.conds.map(([n,dc]) => ({key:`m|${r.id}|${n}`, name:n, kind:"mos", dc})) : [];
+  for(const p of r.pres) opts = opts.concat(p.conds.map(n => ({key:`p|${p.id}|${n}`, name:n, kind:"pres", prog:p.id, why:p.why})));
+  const seenP = new Set(); opts = opts.filter(o => { const k = plain(o.name).toLowerCase(); if(seenP.has(k)) return false; seenP.add(k); return true; });
+  const LIM = 5, more = opts.length > LIM + 1 && !S.showAll, shown = more ? opts.slice(0, LIM) : opts;
+  sh.innerHTML = `<div><h2>${esc(r.title)}</h2><p class="why">${esc(why)}${r.pres.length ? ` Blue items are presumed connected by your service dates and places.` : ""}</p></div>` +
+    (r.m && r.m.note ? `<p class="calm">${esc(r.m.note)}</p>` : "") +
+    `<p class="fine muted">Which of these do you live with today?</p>` +
+    shown.map(o => `<button type="button" class="opt" data-k="${esc(o.key)}" aria-pressed="${S.marked.has(o.key)}"><span>${esc(plain(o.name))}</span>${plain(o.name) !== o.name ? `<span class="term">${esc(o.name)}</span>` : ""}${o.kind === "pres" ? `<span class="term">Presumptive: ${esc(PROGS[o.prog].name)}</span>` : ""}</button>`).join("") +
+    (more ? `<button type="button" class="link" id="show-more">Show ${opts.length - LIM} more</button>` : "");
+  sh.querySelector("#show-more")?.addEventListener("click", () => { S.showAll = true; renderSheet(); });
+  sh.querySelectorAll(".opt").forEach(b => b.addEventListener("click", () => {
+    const k = b.dataset.k, o = opts.find(x => x.key === k);
+    S.marked.has(k) ? S.marked.delete(k) : S.marked.set(k, {...o, area:r.id, areaTitle:r.title, s:r.s, diag:{src:"",where:"",year:""}});
+    drawMap(); nav(); save();
+  }));
+}
+function renderTally(){ const n = S.marked.size; $("tally").innerHTML = n ? `<strong>${n} added.</strong> Keep going or tap Next.` : `Nothing added yet. That's fine, look around first.`; }
+$("flip").addEventListener("click", () => { S.view = S.view === "front" ? "back" : "front"; const rs = regions(); if(!byId(S.sel)?.v[S.view]) S.sel = (rs.find(r => r.v[S.view] && r.s === 3) || rs.find(r => r.v[S.view])).id; drawMap(); });
+
+/* ---------- step 4 ---------- */
+const DXO = [["va","VA"],["private","Private doctor"],["both","Both"],["none","Not yet"]];
+function renderDx(){
+  const all = [...S.marked.values()], w = $("dx-wrap");
+  if(!all.length){ w.innerHTML = `<p class="muted">You didn't add anything on the map, so there's nothing to ask here. Tap Next.</p>`; return; }
+  S.dxi = Math.min(S.dxi, all.length - 1); const e = all[S.dxi], d = e.diag;
+  w.innerHTML = `<div class="one"><span class="n">${S.dxi + 1} of ${all.length}</span><div class="name">${esc(plain(e.name))}</div>` +
+    `<div class="grid2">${DXO.map(([v,l]) => `<button type="button" class="big" data-v="${v}" aria-pressed="${d.src === v}">${l}</button>`).join("")}</div>` +
+    (d.src && d.src !== "none" ? `<div class="follow"><div class="field"><label for="dx-where">${d.src === "va" ? "Which VA" : d.src === "private" ? "Which doctor or clinic" : "VA and doctor"} (optional)</label><input type="text" id="dx-where" value="${esc(d.where)}" autocomplete="off"></div><div class="field"><label for="dx-year">Year</label><input type="number" id="dx-year" inputmode="numeric" value="${esc(d.year)}"></div></div>` : "") +
+    (d.src === "none" ? `<p class="fine muted">Then your first step is a doctor's visit for this one. We'll say so in your summary.</p>` : "") +
+    `<div class="dots">${all.map((x,i) => `<i class="${i === S.dxi ? "on" : x.diag.src ? "ok" : ""}"></i>`).join("")}</div>` +
+    `<div class="pager"><button type="button" class="ghost" id="dx-prev" ${S.dxi === 0 ? "disabled" : ""}>Previous</button><button type="button" class="ghost" id="dx-next" ${S.dxi === all.length - 1 ? "disabled" : ""}>Next one</button></div></div>`;
+  w.querySelectorAll(".big").forEach(b => b.addEventListener("click", () => { d.src = d.src === b.dataset.v ? "" : b.dataset.v; renderDx(); if(d.src && S.dxi < all.length - 1 && (d.src === "none")) {} }));
+  w.querySelector("#dx-where")?.addEventListener("input", ev => d.where = ev.target.value.trim());
+  w.querySelector("#dx-year")?.addEventListener("input", ev => d.year = ev.target.value.trim());
+  w.querySelector("#dx-prev").addEventListener("click", () => { S.dxi--; renderDx(); });
+  w.querySelector("#dx-next").addEventListener("click", () => { S.dxi++; renderDx(); });
+}
+
+/* ---------- step 5 ---------- */
+function buildSecQ(){
+  const seen = new Set([...S.marked.values()].map(e => e.name.toLowerCase())), q = [];
+  for(const e of [...S.marked.values()].filter(e => e.kind !== "sec")) for(const [n,dc,why] of secFor(e.name).slice(0,3)){ if(seen.has(n.toLowerCase())) continue; seen.add(n.toLowerCase()); q.push({key:"s|"+n, name:n, dc, why, primary:e.name, ans:S.marked.has("s|"+n) ? "yes" : ""}); }
+  S.secQ = q; S.seci = 0;
+}
+function renderSec(){
+  const w = $("sec-wrap"), q = S.secQ;
+  if(!q.length){ w.innerHTML = `<p class="muted">Nothing to ask here. Tap Next.</p>`; return; }
+  const x = q[S.seci];
+  w.innerHTML = `<div class="one"><span class="n">${S.seci + 1} of ${q.length} · often follows from ${esc(plain(x.primary).toLowerCase())}</span><div class="name">${esc(plain(x.name))}?</div><p class="fine muted">${esc(x.why)}</p>` +
+    `<div class="grid2"><button type="button" class="big" data-a="yes" aria-pressed="${x.ans === "yes"}">Yes</button><button type="button" class="big" data-a="no" aria-pressed="${x.ans === "no"}">No</button></div>` +
+    `<div class="dots">${q.map((y,i) => `<i class="${i === S.seci ? "on" : y.ans ? "ok" : ""}"></i>`).join("")}</div>` +
+    `<div class="pager"><button type="button" class="ghost" id="sq-prev" ${S.seci === 0 ? "disabled" : ""}>Previous</button><button type="button" class="ghost" id="sq-next" ${S.seci === q.length - 1 ? "disabled" : ""}>Next one</button></div></div>`;
+  w.querySelectorAll(".big").forEach(b => b.addEventListener("click", () => {
+    x.ans = b.dataset.a;
+    if(x.ans === "yes") S.marked.set(x.key, {key:x.key, name:x.name, kind:"sec", dc:x.dc, primary:x.primary, area:null, areaTitle:"", s:2, diag:{src:"",where:"",year:""}}); else S.marked.delete(x.key);
+    if(S.seci < q.length - 1) S.seci++; renderSec();
+  }));
+  w.querySelector("#sq-prev").addEventListener("click", () => { S.seci--; renderSec(); });
+  w.querySelector("#sq-next").addEventListener("click", () => { S.seci++; renderSec(); });
+}
+
+/* ---------- step 6 ---------- */
+function grade(e){
+  if(e.kind === "sec" && !e.diag.src) return ["b","Possible: raise it with your doctor"];
+  if(!e.diag.src || e.diag.src === "none") return ["c","Needs a doctor first"];
+  if(e.kind === "pres") return ["a","Solid: presumed by your service"];
+  if(e.kind === "sec") return ["b","Possible: needs a doctor to link it"];
+  if(e.s === 3) return ["a","Solid: fits your job"];
+  if(e.s === 2) return ["b","Possible: fits your job"];
+  return ["c","A reach from the job alone"];
+}
+function renderSum(){
+  const all = [...S.marked.values()], g = all.map(e => [e, ...grade(e)]);
+  const a = g.filter(x => x[1] === "a").length, b = g.filter(x => x[1] === "b").length, c = g.filter(x => x[1] === "c").length;
+  $("tiles").innerHTML = `<div class="tile a"><b>${a}</b><span>look solid</span></div><div class="tile b"><b>${b}</b><span>possible, need a link</span></div><div class="tile c"><b>${c}</b><span>need a doctor or more story</span></div>`;
+  $("sum-lead").textContent = !all.length ? "You didn't add any conditions. That's okay. Go back to the map any time, or send this anyway and a reviewer will call." : a ? `${a} of these could move soon. The rest have a clear next step.` : "Nothing is ready to file yet, but every item has a clear next step.";
+  $("sum").innerHTML = g.map(([e,k,l]) => `<div class="r"><span>${esc(plain(e.name))}${e.kind === "sec" ? `<br><span class="muted fine">from ${esc(plain(e.primary).toLowerCase())}</span>` : ""}</span><span class="st ${k}">${l}</span></div>`).join("");
+}
+function canSend(){ return $("c-name").value.trim() && ($("c-email").value.trim() || $("c-phone").value.trim()) && $("c-ok1").checked && $("c-ok2").checked; }
+["c-name","c-email","c-phone","c-ok1","c-ok2","c-ok3","c-disch"].forEach(id => $(id).addEventListener("input", nav));
+function send(){
+  S.sent = true; clearSave(); $("submit-box").hidden = true; $("prog-label").textContent = "Done"; $("prog-fill").style.width = "100%";
+  $("sent").hidden = false; $("sent").innerHTML = `<strong>Sent. (Preview: nothing actually left this page.)</strong><p class="fine">In the real version: a reviewer gets your triage brief, you get an email with your draft statement and the list above, and a text with a link to come back and change anything. Expect a call or text within two business days.</p>`;
+  nav(); window.scrollTo({top:0, behavior:"smooth"});
+}
+
+/* ---------- save on device, resume, install ---------- */
+const KEY = "n247-start-v1";
+function save(){
+  if(S.sent) return;
+  try{ localStorage.setItem(KEY, JSON.stringify({step:S.step, mos:S.mos, y1:S.y1, y2:S.y2, locs:[...S.locs], marked:[...S.marked.values()], t:Date.now()})); }catch(e){}
+}
+function clearSave(){ try{ localStorage.removeItem(KEY); }catch(e){} }
+function loadSave(){ try{ const d = JSON.parse(localStorage.getItem(KEY) || "null"); return d && d.mos ? d : null; }catch(e){ return null; } }
+function restore(d){
+  S.mos = d.mos; S.y1 = d.y1 || ""; S.y2 = d.y2 || ""; S.locs = new Set(d.locs || []); S.marked = new Map((d.marked || []).map(e => [e.key, e]));
+  $("y1").value = S.y1; $("y2").value = S.y2; if(!mosOf(S.mos)){ clearSave(); $("resume").hidden = true; return; } pickJob(S.mos);
+  $("resume").hidden = true; show(Math.min(Math.max(d.step || 1, 1), 5));
+}
+function offerResume(){
+  const d = loadSave(); if(!d) return;
+  const r = $("resume"), when = new Date(d.t), n = (d.marked || []).length;
+  r.innerHTML = `<span class="n">Welcome back</span><div class="name">Pick up where you left off?</div><p class="fine muted">Saved on this phone ${when.toLocaleDateString()} at step ${d.step || 1}${n ? `, ${n} condition${n > 1 ? "s" : ""} added` : ""}. Nothing was sent anywhere.</p><div class="grid2"><button type="button" class="big" id="res-yes">Continue</button><button type="button" class="big" id="res-no">Start over</button></div>`;
+  r.hidden = false;
+  $("res-yes").addEventListener("click", () => restore(d));
+  $("res-no").addEventListener("click", () => { clearSave(); r.hidden = true; });
+}
+let deferredInstall = null;
+const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) && !window.MSStream;
+const standalone = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+function showInstall(kind){
+  if(standalone) return; let seen = false; try{ seen = localStorage.getItem("n247-install-seen") === "1"; }catch(e){}
+  if(seen) return;
+  const b = $("install");
+  b.innerHTML = kind === "android"
+    ? `<span class="grow"><strong>Add this to your phone.</strong> It works like an app and keeps your place.</span><button type="button" class="ghost" id="inst-go">Install</button><button type="button" class="link" id="inst-x" aria-label="Dismiss">Not now</button>`
+    : `<span class="grow"><strong>Add this to your home screen.</strong> Tap the Share button, then "Add to Home Screen". It then opens like an app and keeps your place.</span><button type="button" class="link" id="inst-x" aria-label="Dismiss">Got it</button>`;
+  b.hidden = false;
+  $("inst-x").addEventListener("click", () => { b.hidden = true; try{ localStorage.setItem("n247-install-seen","1"); }catch(e){} });
+  $("inst-go")?.addEventListener("click", async () => { if(!deferredInstall) return; deferredInstall.prompt(); await deferredInstall.userChoice; deferredInstall = null; b.hidden = true; });
+}
+window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); deferredInstall = e; showInstall("android"); });
+if(isIOS) setTimeout(() => showInstall("ios"), 1500);
+if("serviceWorker" in navigator && location.protocol.startsWith("http")) window.addEventListener("load", () => { navigator.serviceWorker.register("./sw.js").catch(() => {}); });
+
+/* ---------- navigation ---------- */
+const STEPS = 6;
+function show(n){
+  S.step = n;
+  for(let i = 1; i <= STEPS; i++) $("s"+i).hidden = i !== n;
+  $("prog-label").textContent = n === 6 && S.sent ? "Done" : `Step ${n} of ${STEPS}` + (n < 6 ? ` · about ${[0,3,2,2,1,1][n]} min left` : "");
+  $("prog-fill").style.width = (n / STEPS * 100) + "%";
+  if(n === 2) renderPlaces(); if(n === 3) drawMap(); if(n === 4) renderDx(); if(n === 5){ buildSecQ(); renderSec(); } if(n === 6) renderSum();
+  nav(); window.scrollTo({top:0}); if(n > 1) save();
+}
+function nav(){
+  const n = S.step, next = $("next"), skip = $("skip");
+  $("back").disabled = n === 1 || S.sent; $("back").hidden = S.sent;
+  skip.hidden = !(n === 2 || n === 3 || n === 4 || n === 5) || S.sent;
+  if(n === 1){ next.disabled = !S.mos; next.textContent = "Next"; }
+  else if(n === 6){ next.hidden = S.sent; next.disabled = !canSend(); next.textContent = "Send to a reviewer"; }
+  else { next.disabled = false; next.textContent = n === 3 ? (S.marked.size ? "Next" : "Next, nothing to add") : "Next"; next.hidden = false; }
+}
+$("next").addEventListener("click", () => S.step === 6 ? send() : show(S.step + 1));
+$("back").addEventListener("click", () => show(S.step - 1));
+$("skip").addEventListener("click", () => show(S.step + 1));
+$("big-text").addEventListener("click", e => { const on = document.documentElement.classList.toggle("big"); e.currentTarget.setAttribute("aria-pressed", on); e.currentTarget.textContent = on ? "Normal text" : "Larger text"; });
+show(1); loadData().then(ok => { if(ok) offerResume(); });
+</script>
